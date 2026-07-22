@@ -19,6 +19,9 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
+    "@content-collections/core": "^0.15.2",
+    "@content-collections/mdx": "^0.2.2",
+    "@content-collections/next": "^0.2.11",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.2",
