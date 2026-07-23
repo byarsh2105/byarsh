@@ -24,7 +24,7 @@ export const navigation = [
     href: '/about',
   },
   {
-    title: "Let's Talk",
-    href: '/lets-talk',
+    title: 'Contact',
+    href: '/contact',
   },
 ];

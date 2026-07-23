@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,32 +49,32 @@
 }
 
 :root {
-  /* ByArsh Brand Colors */
   --background: #faf8f5;
-  --foreground: #3d342f;
+
+  --foreground: #171717;
 
   --card: #ffffff;
-  --card-foreground: #3d342f;
+  --card-foreground: #171717;
 
   --popover: #ffffff;
-  --popover-foreground: #3d342f;
+  --popover-foreground: #171717;
 
-  --primary: #b7a6d9;
-  --primary-foreground: #3d342f;
+  --primary: #9673a8;
+  --primary-foreground: #ffffff;
 
-  --secondary: #f5f1ec;
-  --secondary-foreground: #3d342f;
+  --secondary: #f6f1ea;
+  --secondary-foreground: #171717;
 
-  --muted: #f5f1ec;
-  --muted-foreground: #6b625c;
+  --muted: #f6f1ea;
+  --muted-foreground: #6f6a66;
 
-  --accent: #e8dff8;
-  --accent-foreground: #3d342f;
+  --accent: #efe4f9;
+  --accent-foreground: #171717;
 
-  --border: #e7ded5;
-  --input: #e7ded5;
+  --border: #e8e0d7;
+  --input: #e8e0d7;
 
-  --ring: #b7a6d9;
+  --ring: #d0a6ea;
 
   --radius: 1rem;
 }
@@ -116,10 +116,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    font-family: var(--font-geist-sans);
+  }
+
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+
+  .font-heading {
+    font-family: var(--font-heading), serif;
   }
 }
