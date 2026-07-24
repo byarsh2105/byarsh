@@ -24,26 +24,20 @@ export default function Header() {
           {/* Navigation */}
 
           <nav className="hidden items-center gap-8 lg:flex">
-            {navigation.map((item, index) => (
+            {navigation.map((item) => (
               <Link
-                key={item.title}
+                key={item.href}
                 href={item.href}
-                className={`hover:text-primary relative text-[15px] font-medium tracking-[0.01em] transition-colors ${
-                  index === 0 ? 'text-black' : 'text-muted-foreground'
-                }`}
+                className="hover:text-primary after:bg-primary relative pb-2 text-[15px] font-medium transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-0 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.title}
-
-                {index === 0 && (
-                  <span className="bg-primary absolute left-1/2 mt-2 h-[2px] w-5 -translate-x-1/2 rounded-full" />
-                )}
               </Link>
             ))}
           </nav>
 
           {/* Subscribe */}
 
-          <Button className="bg-primary hover:bg-primary rounded-[14px] px-6 py-3 text-white">
+          <Button className="h-10 rounded-[14px] px-5 text-[15px] font-medium">
             Subscribe
           </Button>
         </div>

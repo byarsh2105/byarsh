@@ -40,9 +40,9 @@ export default function Hero() {
 
               <Button
                 variant="outline"
-                className="gap-2 rounded-xl border-gray-200 bg-white px-8 py-6 text-black hover:bg-gray-50"
+                className="rounded-xl border-gray-200 !bg-white px-8 py-6 !text-black hover:!bg-gray-50"
               >
-                Explore Projects <span>→</span>
+                Explore Projects <span className="ml-2">→</span>
               </Button>
             </div>
           </div>
