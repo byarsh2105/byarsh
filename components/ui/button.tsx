@@ -12,7 +12,7 @@ export default function Button({
   return (
     <button
       {...props}
-      className={`bg-primary text-primary-foreground inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg ${className} `}
+      className={`bg-primary text-primary-foreground inline-flex h-12 items-center justify-center gap-2 rounded-[8px] px-6 text-[13px] font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-md ${className} `}
     >
       {children}
     </button>

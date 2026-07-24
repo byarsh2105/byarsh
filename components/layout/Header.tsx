@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Container from './Container';
 import Button from '@/components/ui/button';
 import { navigation } from '@/components/layout/navigation';
+import { Mail } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -23,7 +24,7 @@ export default function Header() {
 
           {/* Navigation */}
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="ml-6 hidden items-center gap-8 lg:flex">
             {navigation.map((item) => (
               <Link
                 key={item.href}
@@ -37,7 +38,8 @@ export default function Header() {
 
           {/* Subscribe */}
 
-          <Button className="h-10 rounded-[14px] px-5 text-[15px] font-medium">
+          <Button className="-ml-14 h-10 rounded-[14px] px-5 text-[15px] font-medium">
+            <Mail size={16} strokeWidth={2} className="mr-1" />
             Subscribe
           </Button>
         </div>

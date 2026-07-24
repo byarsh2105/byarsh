@@ -29,18 +29,20 @@ export default function Hero() {
             </p>
 
             <p className="mt-6 max-w-[450px] text-[17px] leading-[1.9] font-normal tracking-[0.005em] text-[#2B2B2B]">
-              Welcome to ByArsh - a calm digital journal where stories, books,
-              travel, technology and thoughtful ideas come together. Every page
-              is created with intention, inviting you to slow down, stay
-              curious, and keep learning.
+              Welcome to ByArsh—a calm digital journal where stories, books,
+              poetry, technology, travel, and thoughtful ideas come together.
+              Every page is created with intention, inviting you to slow down,
+              stay curious, and keep learning.
             </p>
 
             <div className="mt-10 flex gap-5">
-              <Button className="rounded-xl px-8 py-6">Start Reading</Button>
+              <Button>
+                Start Reading <span className="ml-2">→</span>
+              </Button>
 
               <Button
                 variant="outline"
-                className="rounded-xl border-gray-200 !bg-white px-8 py-6 !text-black hover:!bg-gray-50"
+                className="border border-black bg-white !text-black hover:border-black hover:bg-white hover:!text-black"
               >
                 Explore Projects <span className="ml-2">→</span>
               </Button>
@@ -49,7 +51,7 @@ export default function Hero() {
 
           {/* Right */}
 
-          <div className="bg-secondary h-[720px] rounded-[36px]"></div>
+          <div className="bg-secondary -ml-12 h-[720px] rounded-[3px]"></div>
         </div>
       </Container>
     </section>
