@@ -1,4 +1,5 @@
 import Header from '@/components/layout/Header';
+import Container from '@/components/layout/Container';
 import JourneyHero from '@/components/journey/JourneyHero';
 import JourneyStory from '@/components/journey/JourneyStory';
 import Timeline from '@/components/journey/Timeline';
@@ -13,12 +14,21 @@ export default function JourneyPage() {
     <>
       <Header />
 
-      <main className="pb-10">
+      <main className="bg-background pb-10">
         <JourneyHero />
-        <JourneyStory />
-        <Timeline />
-        <Lessons />
-        <WhatsNext />
+
+        {/* Massive 3D Box Wrapping All Journey Sections */}
+        <section className="pt-0 pb-16">
+          <Container>
+            <div className="flex flex-col gap-16 rounded-[36px] border border-black/[0.02] bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] lg:gap-24 lg:p-12">
+              <JourneyStory />
+              <Timeline />
+              <Lessons />
+              <WhatsNext />
+            </div>
+          </Container>
+        </section>
+
         <SharedNewsletter />
       </main>
 
