@@ -4,16 +4,16 @@ import { journalPosts } from '@/constants/journal';
 
 export default function JournalSection() {
   return (
-    <section className="py-32">
+    <section className="pt-4 pb-8 lg:pt-8 lg:pb-12">
       <Container>
         {/* Heading */}
 
-        <div className="mx-auto mb-20 max-w-3xl text-center">
+        <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center text-center">
           <h2 className="font-heading text-[56px] leading-none tracking-[-0.02em]">
             Latest from the Journal
           </h2>
 
-          <p className="font-heading text-muted-foreground mt-5 text-[22px]">
+          <p className="mt-6 max-w-[450px] text-[16px] leading-[1.9] font-normal tracking-[0.005em] text-[#2B2B2B]">
             Stories, ideas, and reflections from life and work.
           </p>
 
@@ -38,9 +38,8 @@ export default function JournalSection() {
         </div>
 
         {/* Bottom Link */}
-
-        <div className="mt-16 flex justify-center">
-          <button className="text-primary inline-flex items-center gap-2 text-[17px] font-medium transition-all duration-300 hover:gap-3">
+        <div className="mt-8 flex justify-center">
+          <button className="text-primary inline-flex items-center gap-2 text-[16px] leading-[1.9] font-normal tracking-[0.005em] transition-all duration-300 hover:gap-3">
             View all articles
             <span>→</span>
           </button>

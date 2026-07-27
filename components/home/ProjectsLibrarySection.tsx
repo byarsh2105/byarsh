@@ -6,18 +6,18 @@ import { libraryBooks } from '@/constants/library';
 
 export default function ProjectsLibrarySection() {
   return (
-    <section className="py-24">
+    <section className="border-border/40 border-t bg-white py-16">
       <Container>
-        <div className="mx-auto max-w-6xl border-t border-[#ECE5DC] pt-16">
-          <div className="grid gap-12 lg:grid-cols-2">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid items-stretch gap-12 lg:grid-cols-2">
             {/* Featured Projects */}
 
-            <div className="pr-8">
-              <h2 className="font-heading text-center text-[42px] leading-none">
+            <div className="flex h-full flex-col pr-8">
+              <h2 className="font-heading text-center text-[36px] leading-none text-[#1B1815]">
                 Featured Projects
               </h2>
 
-              <p className="mt-3 text-center text-[17px] text-[#6D6863]">
+              <p className="mt-4 text-center text-[16px] leading-[1.9] font-normal tracking-[0.005em] text-[#2B2B2B]">
                 Things I'm building and proud of.
               </p>
 
@@ -32,21 +32,22 @@ export default function ProjectsLibrarySection() {
                 ))}
               </div>
 
-              <div className="mt-8 flex justify-center">
-                <button className="text-primary inline-flex items-center gap-2 font-medium transition-all hover:gap-3">
-                  View all projects →
+              <div className="mt-auto flex justify-center pt-8">
+                <button className="text-primary/90 hover:text-primary inline-flex items-center gap-2 text-[13px] font-medium transition-all hover:gap-3">
+                  View all projects
+                  <span>→</span>
                 </button>
               </div>
             </div>
 
             {/* Library */}
 
-            <div className="border-l border-[#ECE5DC] pl-8">
-              <h2 className="font-heading text-center text-[42px] leading-none">
+            <div className="flex h-full flex-col border-l border-[#ECE5DC] pl-8">
+              <h2 className="font-heading text-center text-[36px] leading-none text-[#1B1815]">
                 My Library
               </h2>
 
-              <p className="mt-3 text-center text-[17px] text-[#6D6863]">
+              <p className="mt-4 text-center text-[16px] leading-[1.9] font-normal tracking-[0.005em] text-[#2B2B2B]">
                 Books that inspire and shape my journey.
               </p>
 
@@ -61,9 +62,10 @@ export default function ProjectsLibrarySection() {
                 ))}
               </div>
 
-              <div className="mt-8 flex justify-center">
-                <button className="text-primary inline-flex items-center gap-2 font-medium transition-all hover:gap-3">
-                  Explore my library →
+              <div className="mt-auto flex justify-center pt-8">
+                <button className="text-primary/90 hover:text-primary inline-flex items-center gap-2 text-[13px] font-medium transition-all hover:gap-3">
+                  Explore my library
+                  <span>→</span>
                 </button>
               </div>
             </div>

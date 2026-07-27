@@ -1,9 +1,10 @@
 import Button from '@/components/ui/button';
 import Container from '@/components/layout/Container';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="flex min-h-screen items-center">
+    <section className="pt-20 pb-12 lg:pt-28 lg:pb-8">
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[600px_1fr] xl:gap-24">
           {/* Left */}
@@ -24,11 +25,11 @@ export default function Hero() {
                 <div className="bg-primary mt-6 h-[2px] w-8 rounded-full"></div>
               </div>
             </div>
-            <p className="font-heading mt-8 max-w-[440px] text-[22px] leading-[1.4] font-medium tracking-[0.01em] text-[#2B2B2B]">
+            <p className="font-heading mt-8 max-w-[440px] text-[26px] leading-[1.4] font-medium tracking-[0.01em] text-[#2B2B2B]">
               A place to pause, wonder, and grow.
             </p>
 
-            <p className="mt-6 max-w-[450px] text-[17px] leading-[1.9] font-normal tracking-[0.005em] text-[#2B2B2B]">
+            <p className="mt-6 max-w-[450px] text-[16px] leading-[1.9] font-normal tracking-[0.005em] text-[#2B2B2B]">
               Welcome to ByArsh—a calm digital journal where stories, books,
               poetry, technology, travel, and thoughtful ideas come together.
               Every page is created with intention, inviting you to slow down,
@@ -51,7 +52,14 @@ export default function Hero() {
 
           {/* Right */}
 
-          <div className="bg-secondary -ml-12 h-[720px] rounded-[3px]"></div>
+          <div className="relative -ml-0 h-[400px] w-full overflow-hidden rounded-[3px] shadow-sm lg:-ml-12 lg:h-[600px]">
+            <Image
+              src="/images/home/hero.jpg"
+              alt="Journaling workspace"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </Container>
     </section>

@@ -3,33 +3,31 @@ import { philosophyPoints } from '@/constants/philosophy';
 
 export default function PhilosophySection() {
   return (
-    <section className="py-32">
+    <section className="py-12">
       <Container>
-        <div className="grid overflow-hidden rounded-[34px] border border-[#ECE5DC] bg-[#FBF8F4] lg:grid-cols-[520px_1fr]">
+        <div className="grid items-stretch lg:grid-cols-[480px_1fr]">
           {/* Left Image */}
-
-          <div className="h-[520px] bg-[#EEE7DE]" />
+          <div className="w-full bg-[#EBE5DF]" />
 
           {/* Right Content */}
-
-          <div className="flex flex-col justify-center px-16 py-14">
-            <h2 className="font-heading text-[54px] leading-none tracking-[-0.03em] text-[#1B1815]">
+          <div className="flex h-full flex-col justify-center bg-[#F5EFF7] p-12">
+            <h2 className="font-heading text-[40px] leading-none tracking-[-0.03em] text-[#1B1815]">
               The ByArsh Philosophy
             </h2>
 
-            <div className="mt-10 space-y-7">
+            <div className="mt-8 space-y-4">
               {philosophyPoints.map((point) => (
                 <div key={point} className="flex items-start gap-4">
                   <span className="text-primary mt-1 text-lg">✦</span>
 
-                  <p className="text-[19px] leading-[1.8] text-[#403C39]">
+                  <p className="text-[16px] leading-[1.9] font-normal tracking-[0.005em] text-[#2B2B2B]">
                     {point}
                   </p>
                 </div>
               ))}
             </div>
 
-            <button className="text-primary mt-12 inline-flex w-fit items-center gap-2 text-[17px] font-medium transition-all hover:gap-3">
+            <button className="text-primary mt-8 inline-flex w-fit items-center gap-2 text-[16px] leading-[1.9] font-normal tracking-[0.005em] transition-all hover:gap-3">
               Read our philosophy
               <span>→</span>
             </button>

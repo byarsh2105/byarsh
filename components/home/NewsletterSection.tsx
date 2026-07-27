@@ -2,47 +2,40 @@ import Container from '@/components/layout/Container';
 
 export default function NewsletterSection() {
   return (
-    <section className="border-t border-[#EEE7DF] bg-[#FCFAF7] py-20">
+    <section className="border-t border-[#EEE7DF] bg-[#FCFAF7] py-10">
       <Container>
-        <div className="relative flex flex-col items-center">
-          {/* Decorative star */}
+        <div className="relative flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-16">
+          {/* Left: Text */}
+          <div className="relative z-10 flex flex-col items-end text-right">
+            <div className="relative inline-block">
+              <h2 className="font-heading text-[36px] leading-none text-[#1B1815]">
+                Join the Newsletter
+              </h2>
+              <span className="text-primary absolute -top-2 -right-6 text-xl">
+                ✦
+              </span>
+            </div>
 
-          <span className="text-primary absolute top-2 right-[28%] text-xl">
-            ✦
-          </span>
+            <p className="mt-4 text-[15px] leading-[1.8] font-normal tracking-[0.005em] text-[#2B2B2B]">
+              One thoughtful email. No noise. No spam.
+              <br />
+              Just stories and ideas worth reading.
+            </p>
+          </div>
 
-          {/* Heading */}
+          {/* Right: Form */}
+          <div className="relative z-10 flex items-center">
+            <form className="flex w-full min-w-[380px] overflow-hidden rounded-md border border-[#DDD5CC] bg-white shadow-sm">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="flex-1 bg-transparent px-5 py-3 text-[14px] outline-none placeholder:text-[#A8A29B]"
+              />
 
-          <h2 className="font-heading text-[58px] leading-none tracking-[-0.03em]">
-            Join the Newsletter
-          </h2>
-
-          {/* Subtitle */}
-
-          <p className="mt-5 text-center text-[20px] leading-8 text-[#68635F]">
-            One thoughtful email. No noise. No spam.
-            <br />
-            Just stories and ideas worth reading.
-          </p>
-
-          {/* Email Form */}
-
-          <form className="mt-12 flex w-full max-w-[720px] overflow-hidden rounded-xl border border-[#DDD5CC] bg-white">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 bg-transparent px-6 py-5 text-[16px] outline-none placeholder:text-[#A8A29B]"
-            />
-
-            <button className="bg-primary hover:bg-primary/90 px-10 text-white transition">
-              Subscribe
-            </button>
-          </form>
-
-          {/* Stamp Decoration */}
-
-          <div className="absolute top-10 right-0 text-[80px] opacity-10">
-            ◌
+              <button className="bg-primary hover:bg-primary/90 px-8 text-[14px] font-medium text-white transition">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </Container>

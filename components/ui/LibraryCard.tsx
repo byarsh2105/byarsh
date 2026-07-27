@@ -13,26 +13,17 @@ export default function LibraryCard({
 }: LibraryCardProps) {
   return (
     <article className="text-center">
-      <div className="relative h-[190px] overflow-hidden rounded-[22px] bg-[#ECE5DC]">
-        {/* Replace when images are ready */}
-
-        {/* <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover"
-        /> */}
-
-        <div className="flex h-full items-center justify-center text-sm text-[#7B736B]">
-          Image Coming Soon
-        </div>
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[12px] bg-[#EBE5DF]">
+        <Image src={image} alt={title} fill className="object-cover" />
       </div>
 
-      <h3 className="font-heading mt-7 text-[32px] leading-tight text-[#171717]">
+      <h3 className="font-heading mt-5 text-[18px] leading-tight font-medium text-[#171717]">
         {title}
       </h3>
 
-      <p className="mt-3 text-[17px] leading-7 text-[#6D6863]">{subtitle}</p>
+      <p className="text-muted-foreground/90 mt-2 text-[13px] leading-[1.6]">
+        {subtitle}
+      </p>
     </article>
   );
 }

@@ -1,13 +1,18 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Caveat } from 'next/font/google';
+import { Cormorant_Garamond, Caveat, Allura, Lora } from 'next/font/google';
+
 import './globals.css';
 
-import { Allura } from 'next/font/google';
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-body',
+});
 
 const allura = Allura({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-handwriting',
+  variable: '--font-signature',
 });
 
 const cormorant = Cormorant_Garamond({
@@ -33,7 +38,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${caveat.variable}`}>
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${caveat.variable} ${allura.variable} ${lora.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

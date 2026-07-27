@@ -61,7 +61,7 @@
   --popover: #ffffff;
   --popover-foreground: #171717;
 
-  --primary: #9673a8;
+  --primary: #825b96;
   --primary-foreground: #ffffff;
 
   --secondary: #f6f1ea;
@@ -80,6 +80,7 @@
 
   --radius: 1rem;
 }
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -134,7 +135,15 @@
   .font-signature {
     font-family: var(--font-signature), cursive;
   }
+
   .font-handwriting {
     font-family: var(--font-handwriting), cursive;
+  }
+  .font-heading {
+    font-family: var(--font-heading), serif;
+  }
+
+  .font-body {
+    font-family: var(--font-body), serif;
   }
 }
