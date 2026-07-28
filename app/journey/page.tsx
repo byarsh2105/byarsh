@@ -14,22 +14,24 @@ export default function JourneyPage() {
     <>
       <Header />
 
-      <main className="bg-background pb-10">
+      <main className="bg-background pb-0">
         <JourneyHero />
 
         {/* Massive 3D Box Wrapping All Journey Sections */}
-        <section className="pt-0 pb-16">
+        <section className="pt-0 pb-8">
           <Container>
-            <div className="flex flex-col gap-16 rounded-[36px] border border-black/[0.02] bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] lg:gap-24 lg:p-12">
+            <div className="flex flex-col gap-10 rounded-[36px] border border-[#F2EBE1] bg-[#FCFAFA] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] lg:gap-12 lg:p-12">
               <JourneyStory />
+              <div className="-my-5 h-[1px] w-full bg-black/[0.1] lg:-my-6"></div>
               <Timeline />
+              <div className="-my-5 h-[1px] w-full bg-black/[0.1] lg:-my-6"></div>
               <Lessons />
+              <div className="-my-5 h-[1px] w-full bg-black/[0.1] lg:-my-6"></div>
               <WhatsNext />
+              <SharedNewsletter noContainer={true} />
             </div>
           </Container>
         </section>
-
-        <SharedNewsletter />
       </main>
 
       <QuoteDivider quote="one step at a time." />

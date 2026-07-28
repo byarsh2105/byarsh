@@ -1,9 +1,7 @@
 import Header from '@/components/layout/Header';
 import AboutHero from '@/components/about/AboutHero';
 import MyStory from '@/components/about/MyStory';
-import MissionVision from '@/components/about/MissionVision';
-import CoreValues from '@/components/about/CoreValues';
-import WhatYouWillFind from '@/components/about/WhatYouWillFind';
+import CombinedMissionValues from '@/components/about/CombinedMissionValues';
 import AboutFooterCards from '@/components/about/AboutFooterCards';
 import SharedNewsletter from '@/components/shared/SharedNewsletter';
 import QuoteDivider from '@/components/shared/QuoteDivider';
@@ -14,12 +12,10 @@ export default function AboutPage() {
     <>
       <Header />
 
-      <main className="pb-10">
+      <main className="pb-0">
         <AboutHero />
         <MyStory />
-        <MissionVision />
-        <CoreValues />
-        <WhatYouWillFind />
+        <CombinedMissionValues />
         <AboutFooterCards />
         <SharedNewsletter />
       </main>

@@ -1,10 +1,15 @@
+'use client';
+
 import Link from 'next/link';
 import Container from './Container';
 import Button from '@/components/ui/button';
 import { navigation } from '@/components/layout/navigation';
 import { Mail } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="bg-background w-full">
       <Container>
@@ -25,15 +30,25 @@ export default function Header() {
           {/* Navigation */}
 
           <nav className="ml-6 hidden items-center gap-8 lg:flex">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="hover:text-primary after:bg-primary relative pb-2 text-[15px] font-medium transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-0 after:transition-all after:duration-300 hover:after:w-full"
-              >
-                {item.title}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const isActive =
+                pathname === item.href ||
+                (pathname.startsWith(item.href) && item.href !== '/');
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`hover:text-primary after:bg-primary relative pb-2 text-[15px] font-medium transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:transition-all after:duration-300 hover:after:w-full ${
+                    isActive
+                      ? 'text-primary after:w-full'
+                      : 'text-foreground/80 after:w-0'
+                  }`}
+                >
+                  {item.title}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Subscribe */}

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden pt-12 pb-16">
+    <section className="relative overflow-hidden pt-12 pb-8">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left */}
@@ -12,29 +12,12 @@ export default function AboutHero() {
               About
             </h1>
 
-            <div className="mb-8 flex items-center gap-2">
-              <div className="bg-primary/30 h-[1px] w-16"></div>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-primary/70"
-              >
-                <path d="M5 21s-1-6 2-9c2-2 6-3 9-3" />
-                <path d="M9 13c1 2 4 2 5-1" />
-                <path d="M13 10c1 2 4 2 5-1" />
-                <path d="M15 7c1 2 4 2 5-1" />
-                <path d="M6 18c1 2 4 2 5-1" />
-              </svg>
-            </div>
+            <div className="my-8 h-[2px] w-10 rounded-full bg-[#B092C5]"></div>
 
-            <p className="text-foreground mb-10 max-w-[400px] text-[28px] leading-[1.3] tracking-[-0.01em]">
-              Building a life of curiosity, creativity,
+            <p className="font-heading mb-10 text-[32px] leading-[1.25] font-medium tracking-[-0.01em] text-[#1D1B18] sm:text-[38px]">
+              Building a life of curiosity,
+              <br />
+              creativity,
               <br />
               and continuous learning.
             </p>
@@ -44,23 +27,22 @@ export default function AboutHero() {
               Always learning. Always becoming.
             </div>
           </div>
+          {/* Right Image */}
+          <div className="relative hidden h-[400px] w-full overflow-hidden lg:block">
+            <Image
+              src="/images/journey/journey-hero.jpg"
+              alt="Workspace"
+              fill
+              className="object-cover object-left"
+              style={{
+                maskImage: 'linear-gradient(to right, transparent, black 30%)',
+                WebkitMaskImage:
+                  'linear-gradient(to right, transparent, black 30%)',
+              }}
+            />
+          </div>
         </div>
       </Container>
-
-      {/* Right Image Background */}
-      <div className="absolute top-0 right-0 z-0 h-full w-full opacity-90 lg:w-[55%] lg:opacity-100">
-        <Image
-          src="/images/about/about-hero.jpg"
-          alt="Workspace"
-          fill
-          className="mask-image-to-r object-cover object-left"
-          style={{
-            maskImage: 'linear-gradient(to right, transparent, black 40%)',
-            WebkitMaskImage:
-              'linear-gradient(to right, transparent, black 40%)',
-          }}
-        />
-      </div>
     </section>
   );
 }

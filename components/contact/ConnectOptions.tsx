@@ -39,51 +39,13 @@ export default function ConnectOptions() {
   ];
 
   return (
-    <section className="relative py-12">
-      {/* Decorative Branch Top Right */}
-      <div className="absolute top-0 right-0 hidden -scale-x-100 opacity-40 lg:block">
-        <svg
-          width="120"
-          height="160"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="var(--primary)"
-          strokeWidth="0.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="rotate-12"
-        >
-          <path d="M5 21s-1-6 2-9c2-2 6-3 9-3" />
-          <path d="M9 13c1 2 4 2 5-1" />
-          <path d="M13 10c1 2 4 2 5-1" />
-          <path d="M15 7c1 2 4 2 5-1" />
-          <path d="M6 18c1 2 4 2 5-1" />
-        </svg>
-      </div>
-
+    <section className="relative pt-4 pb-12">
       <Container>
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center">
           <h2 className="font-heading text-foreground mb-4 text-[28px] font-semibold">
             Ways to Connect
           </h2>
-          <div className="flex items-center justify-center gap-2">
-            <div className="bg-primary/30 h-[1px] w-12"></div>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-primary/70"
-            >
-              <path d="M5 21s-1-6 2-9c2-2 6-3 9-3" />
-              <path d="M9 13c1 2 4 2 5-1" />
-            </svg>
-            <div className="bg-primary/30 h-[1px] w-12"></div>
-          </div>
+          <div className="mx-auto mt-4 h-[2px] w-16 rounded-full bg-[#B092C5]"></div>
         </div>
 
         <div className="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -97,22 +59,22 @@ export default function ConnectOptions() {
                 <div className="border-border/60 mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border bg-white shadow-sm">
                   <Icon
                     className="text-primary/80"
-                    strokeWidth={1.5}
+                    strokeWidth={2.5}
                     size={28}
                   />
                 </div>
 
-                <h3 className="font-heading text-foreground mb-2 text-[18px] font-semibold">
+                <h3 className="font-heading mb-2 text-[22px] font-semibold text-black">
                   {opt.title}
                 </h3>
 
-                <p className="text-foreground/70 mb-4 h-[20px] text-[13px]">
+                <p className="mb-5 h-[24px] text-[15px] text-black">
                   {opt.desc}
                 </p>
 
                 <Link
                   href={opt.href}
-                  className="text-primary/80 hover:text-primary mt-auto flex h-[24px] items-center justify-center text-[13px] font-medium transition-colors"
+                  className="text-primary hover:text-primary/80 mt-auto flex h-[24px] items-center justify-center text-[15px] font-semibold transition-colors"
                   target="_blank"
                 >
                   {opt.isEmail ? (

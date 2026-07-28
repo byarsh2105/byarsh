@@ -3,7 +3,7 @@ import {
   GraduationCap,
   Code2,
   Briefcase,
-  BookOpen,
+  Layers,
   Feather,
   Star,
 } from 'lucide-react';
@@ -30,9 +30,9 @@ export default function Timeline() {
     },
     {
       year: '2025',
-      title: 'Started reading\nconsistently',
-      desc: 'Discovered writing\nand storytelling.',
-      icon: BookOpen,
+      title: 'Expanded into\nFull-Stack',
+      desc: 'Bridged the gap between\nbackend logic and design.',
+      icon: Layers,
     },
     {
       year: '2026',
@@ -73,12 +73,12 @@ export default function Timeline() {
                 className="flex flex-col items-center text-center"
               >
                 <div
-                  className={`border-border/40 mb-6 flex h-14 w-14 items-center justify-center rounded-full border bg-[#F4EFEC] shadow-sm ${item.isFuture ? 'bg-transparent' : ''}`}
+                  className={`border-border/40 mb-6 flex h-16 w-16 items-center justify-center rounded-full border bg-[#F4EFEC] shadow-sm ${item.isFuture ? 'bg-transparent' : ''}`}
                 >
                   <Icon
                     className="text-primary/70"
                     strokeWidth={1.5}
-                    size={24}
+                    size={32}
                   />
                 </div>
 
@@ -90,11 +90,11 @@ export default function Timeline() {
                   </span>
                 </div>
 
-                <h3 className="text-foreground mb-3 min-h-[40px] text-[13px] leading-[1.4] font-semibold whitespace-pre-line">
+                <h3 className="text-foreground mb-2 min-h-[40px] text-[15px] leading-[1.4] font-medium whitespace-pre-line">
                   {item.title}
                 </h3>
 
-                <p className="text-foreground/70 text-[12px] leading-[1.5] whitespace-pre-line">
+                <p className="text-foreground/80 text-[14px] leading-[1.6] whitespace-pre-line">
                   {item.desc}
                 </p>
               </div>

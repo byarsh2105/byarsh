@@ -13,23 +13,23 @@ export default function AboutFooterCards() {
   ];
 
   return (
-    <section className="py-12">
+    <section className="pt-12 pb-4">
       <Container>
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Left Card: A Few Things About Me */}
           <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden rounded-[16px] bg-[#F4EFEC] p-8 shadow-sm lg:p-10">
             <div className="relative z-10 max-w-[320px]">
-              <h3 className="font-heading text-foreground mb-6 text-[24px] font-semibold">
+              <h3 className="font-heading mb-6 text-[28px] font-semibold text-black">
                 A Few Things About Me
               </h3>
               <ul className="space-y-3">
                 {facts.map((fact, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <Heart
-                      className="text-primary/70 fill-primary/20 mt-0.5 shrink-0"
-                      size={14}
+                      className="text-primary/70 fill-primary/20 mt-1 shrink-0"
+                      size={16}
                     />
-                    <span className="text-foreground/80 text-[14px] leading-[1.5] font-medium">
+                    <span className="text-[15px] leading-[1.6] font-medium text-black">
                       {fact.text}
                     </span>
                   </li>
@@ -57,15 +57,15 @@ export default function AboutFooterCards() {
           {/* Right Card: Let's build something meaningful */}
           <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden rounded-[16px] bg-[#ECE5ED] p-8 shadow-sm lg:p-10">
             <div className="relative z-10 max-w-[280px]">
-              <h3 className="font-heading text-foreground mb-4 text-[26px] leading-[1.2] font-semibold">
+              <h3 className="font-heading mb-4 text-[30px] leading-[1.2] font-semibold text-black">
                 Let's build something meaningful.
               </h3>
-              <p className="text-foreground/80 mb-8 text-[15px] leading-[1.6]">
+              <p className="mb-8 text-[16px] leading-[1.6] font-bold text-black">
                 Whether you'd like to collaborate, share an idea, or simply say
                 hello— I'd love to hear from you.
               </p>
 
-              <Button className="bg-primary/70 hover:bg-primary/80 h-11 rounded-xl px-8 text-[14px] font-medium transition-colors">
+              <Button className="bg-primary hover:bg-primary/90 h-11 rounded-md px-8 text-[14px] font-medium transition-colors">
                 Let's Talk <span className="ml-2">→</span>
               </Button>
             </div>
@@ -84,26 +84,6 @@ export default function AboutFooterCards() {
                     'linear-gradient(to right, transparent, black 60%)',
                 }}
               />
-            </div>
-
-            {/* Decorative Plant SVG */}
-            <div className="absolute right-[45%] bottom-4 z-10 hidden opacity-40 sm:block">
-              <svg
-                width="50"
-                height="70"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="var(--primary)"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 21s-1-6 2-9c2-2 6-3 9-3" />
-                <path d="M9 13c1 2 4 2 5-1" />
-                <path d="M13 10c1 2 4 2 5-1" />
-                <path d="M15 7c1 2 4 2 5-1" />
-                <path d="M6 18c1 2 4 2 5-1" />
-              </svg>
             </div>
           </div>
         </div>

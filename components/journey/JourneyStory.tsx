@@ -5,24 +5,28 @@ export default function JourneyStory() {
   return (
     <div className="w-full">
       <div className="relative overflow-hidden">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.3fr]">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
           {/* Left Image */}
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[16px]">
-            <Image
-              src="/images/journey/my-story.jpg"
-              alt="Winding road"
-              fill
-              className="object-cover"
-            />
+          <div className="relative w-full shrink-0 lg:w-[320px] xl:w-[360px]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[16px] shadow-sm">
+              <Image
+                src="/images/journey/my-story.jpg"
+                alt="Winding road"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
 
           {/* Right Content */}
-          <div className="pr-4 lg:pr-12">
-            <h2 className="font-heading text-foreground mb-6 text-[28px] font-semibold sm:text-[32px]">
+          <div className="relative z-10 flex-1 lg:pr-32">
+            <h2 className="font-heading text-foreground text-[28px] font-medium sm:text-[32px]">
               My Story
             </h2>
 
-            <div className="text-foreground/80 space-y-4 text-[15px] leading-[1.7]">
+            <div className="my-8 h-[2px] w-10 rounded-full bg-[#B092C5]"></div>
+
+            <div className="max-w-[500px] space-y-4 text-[15px] leading-[1.8] text-black">
               <p>Every journey begins with curiosity.</p>
               <p>
                 Mine began with a love for learning and a belief that small,
@@ -37,24 +41,16 @@ export default function JourneyStory() {
           </div>
         </div>
 
-        {/* Decorative Branch */}
-        <div className="absolute right-4 bottom-4 opacity-40">
-          <svg
-            width="60"
-            height="80"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="var(--primary)"
-            strokeWidth="0.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M5 21s-1-6 2-9c2-2 6-3 9-3" />
-            <path d="M9 13c1 2 4 2 5-1" />
-            <path d="M13 10c1 2 4 2 5-1" />
-            <path d="M15 7c1 2 4 2 5-1" />
-            <path d="M6 18c1 2 4 2 5-1" />
-          </svg>
+        {/* Decorative Branch Image */}
+        <div className="absolute top-1/2 right-0 hidden -translate-y-1/2 opacity-85 lg:block lg:pr-8">
+          <div className="relative h-[220px] w-[180px]">
+            <Image
+              src="/images/journey/floral-branch.png"
+              alt="Decorative floral branch"
+              fill
+              className="object-contain object-right mix-blend-multiply"
+            />
+          </div>
         </div>
       </div>
     </div>

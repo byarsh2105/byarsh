@@ -11,7 +11,7 @@ export default function ContactPage() {
     <>
       <Header />
 
-      <main className="bg-background pb-10">
+      <main className="bg-background pb-0">
         <ContactHero />
         <ConnectOptions />
         <ContactForm />
