@@ -1,41 +1,21 @@
 import { defineCollection, defineConfig } from '@content-collections/core';
 import { compileMDX } from '@content-collections/mdx';
+import { z } from 'zod';
 
 const journal = defineCollection({
   name: 'journal',
   directory: 'content/journal',
   include: '**/*.mdx',
-  schema: {
-    title: {
-      type: 'string',
-      required: true,
-    },
-    description: {
-      type: 'string',
-      required: true,
-    },
-    date: {
-      type: 'string',
-      required: true,
-    },
-    category: {
-      type: 'string',
-      required: true,
-    },
-    tags: {
-      type: 'array',
-      items: {
-        type: 'string',
-      },
-      required: true,
-    },
-    published: {
-      type: 'boolean',
-      default: true,
-    },
-  },
-  transform: async (document) => {
-    const body = await compileMDX(document);
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.string(),
+    category: z.string(),
+    tags: z.array(z.string()),
+    published: z.boolean().default(true),
+  }),
+  transform: async (document, context) => {
+    const body = await compileMDX(context, document);
 
     return {
       ...document,

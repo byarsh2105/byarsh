@@ -122,6 +122,7 @@
 
   html {
     font-family: var(--font-body), sans-serif;
+    scroll-behavior: smooth;
   }
 
   body {

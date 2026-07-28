@@ -1,10 +1,24 @@
+'use client';
+
 import Container from '@/components/layout/Container';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 import { Mail } from 'lucide-react';
+import { site } from '@/src/content/site';
+import { socialLinks } from '@/src/content/social';
 
 export default function Footer() {
+  const { footer, navigation } = site;
+  const pathname = usePathname();
+
+  const logoText = navigation.logo.text;
+  const isByArshFormat = logoText.startsWith('By') && logoText.endsWith('.');
+  const logoFirstPart = isByArshFormat ? logoText.slice(0, 2) : logoText;
+  const logoMiddlePart = isByArshFormat ? logoText.slice(2, -1) : '';
+  const logoLastPart = isByArshFormat ? logoText.slice(-1) : '';
+
   return (
     <footer className="border-t border-[#EEE7DF] bg-[#FAF8F5] pt-8 pb-20 text-black">
       <Container>
@@ -12,104 +26,110 @@ export default function Footer() {
           {/* Left */}
           <div>
             <Link
-              href="/"
+              href={navigation.logo.href}
               className="flex items-end text-[48px] leading-none tracking-[-0.04em] text-black"
             >
-              <span className="font-heading italic">By</span>
-              <span className="font-heading">Arsh</span>
-              <span className="text-primary ml-1">.</span>
+              {isByArshFormat ? (
+                <>
+                  <span className="font-heading italic">{logoFirstPart}</span>
+                  <span className="font-heading">{logoMiddlePart}</span>
+                  <span className="text-primary ml-1">{logoLastPart}</span>
+                </>
+              ) : (
+                <span className="font-heading">{logoText}</span>
+              )}
             </Link>
 
             <p className="mt-6 max-w-[280px] text-[18px] leading-8 text-black">
-              A place to pause,
-              <br />
-              wonder, and grow.
+              {footer.taglineLines.map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < footer.taglineLines.length - 1 && <br />}
+                </span>
+              ))}
             </p>
 
             {/* Social Icons */}
             <div className="mt-8 flex items-center gap-5 text-black">
-              <FaInstagram
-                size={20}
-                className="hover:text-primary cursor-pointer transition-colors"
-              />
-              <FaLinkedin
-                size={20}
-                className="hover:text-primary cursor-pointer transition-colors"
-              />
-              <FaGithub
-                size={20}
-                className="hover:text-primary cursor-pointer transition-colors"
-              />
-              <Mail
-                size={20}
-                className="hover:text-primary cursor-pointer transition-colors"
-              />
+              <Link
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram
+                  size={20}
+                  className="hover:text-primary cursor-pointer transition-colors"
+                />
+              </Link>
+              <Link
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin
+                  size={20}
+                  className="hover:text-primary cursor-pointer transition-colors"
+                />
+              </Link>
+              <Link
+                href={socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub
+                  size={20}
+                  className="hover:text-primary cursor-pointer transition-colors"
+                />
+              </Link>
+              <Link href={socialLinks.email}>
+                <Mail
+                  size={20}
+                  className="hover:text-primary cursor-pointer transition-colors"
+                />
+              </Link>
             </div>
           </div>
 
           {/* Center Links */}
           <div className="flex flex-wrap gap-16 pt-4 lg:gap-24">
-            {/* Explore */}
-            <div>
-              <h3 className="font-heading text-primary mb-6 text-[20px] font-semibold tracking-wide">
-                Explore
-              </h3>
-              <div className="space-y-3 text-[16px] text-black">
-                <Link href="/journal" className="hover:text-primary block">
-                  Journal
-                </Link>
-                <Link href="/projects" className="hover:text-primary block">
-                  Projects
-                </Link>
-                <Link href="/library" className="hover:text-primary block">
-                  Library
-                </Link>
-                <Link href="/journey" className="hover:text-primary block">
-                  Journey
-                </Link>
+            {footer.linkGroups.map((group, index) => (
+              <div key={index}>
+                <h3 className="font-heading text-primary mb-6 text-[20px] font-semibold tracking-wide">
+                  {group.title}
+                </h3>
+                <div className="space-y-3 text-[16px] text-black">
+                  {group.links.map((link, linkIndex) => (
+                    <Link
+                      key={linkIndex}
+                      href={link.href}
+                      className="hover:text-primary block"
+                      onClick={(e) => {
+                        if (pathname === '/' && link.href === '/#newsletter') {
+                          e.preventDefault();
+                          const element = document.getElementById('newsletter');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            {/* About */}
-            <div>
-              <h3 className="font-heading text-primary mb-6 text-[20px] font-semibold tracking-wide">
-                About
-              </h3>
-              <div className="space-y-3 text-[16px] text-black">
-                <Link href="/about" className="hover:text-primary block">
-                  About Me
-                </Link>
-                <Link href="/philosophy" className="hover:text-primary block">
-                  Philosophy
-                </Link>
-                <Link href="/journey" className="hover:text-primary block">
-                  Timeline
-                </Link>
-              </div>
-            </div>
-
-            {/* Connect */}
-            <div>
-              <h3 className="font-heading text-primary mb-6 text-[20px] font-semibold tracking-wide">
-                Connect
-              </h3>
-              <div className="space-y-3 text-[16px] text-black">
-                <Link href="/contact" className="hover:text-primary block">
-                  Contact
-                </Link>
-                <Link href="/newsletter" className="hover:text-primary block">
-                  Newsletter
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Right: Copyright */}
           <div className="relative flex min-w-[200px] items-end justify-end pt-4 pr-[300px]">
             <p className="relative z-10 mb-6 text-[15px] leading-7 text-black">
-              © 2026 ByArsh.
-              <br />
-              All rights reserved.
+              {footer.copyrightLines.map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < footer.copyrightLines.length - 1 && <br />}
+                </span>
+              ))}
             </p>
 
             <Image

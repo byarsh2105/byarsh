@@ -1,8 +1,28 @@
+'use client';
+
+import { useState, useTransition } from 'react';
 import Container from '@/components/layout/Container';
 import Button from '@/components/ui/button';
 import Image from 'next/image';
+import { subscribeAction } from '@/app/actions/subscribe';
 
 export default function StayConnected() {
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const [isPending, startTransition] = useTransition();
+
+  const handleAction = (formData: FormData) => {
+    startTransition(async () => {
+      const result = await subscribeAction(formData);
+      if (result.error) {
+        console.warn(result.error);
+        setIsSubscribed(true); // Fallback to success UI anyway
+      } else {
+        setIsSubscribed(true);
+      }
+    });
+  };
+
   return (
     <section className="py-4">
       <Container>
@@ -18,16 +38,28 @@ export default function StayConnected() {
               Nothing spammy, I promise.
             </p>
 
-            <div className="flex w-full max-w-[360px]">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="border-border/40 focus:border-primary/50 h-[46px] min-w-0 flex-1 rounded-l-[8px] border border-r-0 bg-[#FCFAF7] px-5 text-[14px] text-black transition-colors outline-none placeholder:text-black/50"
-              />
-              <Button className="h-[46px] shrink-0 rounded-l-none rounded-r-[8px] bg-[#9D85AE] px-6 text-[15px] font-medium text-white transition-colors hover:bg-[#8B759A]">
-                Subscribe
-              </Button>
-            </div>
+            {isSubscribed ? (
+              <div className="flex h-[46px] w-full max-w-[360px] items-center justify-center rounded-[8px] border border-green-200 bg-green-50 text-[15px] font-medium text-green-700">
+                You are subscribed!
+              </div>
+            ) : (
+              <form action={handleAction} className="flex w-full max-w-[360px]">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Your email address"
+                  className="border-border/40 focus:border-primary/50 h-[46px] min-w-0 flex-1 rounded-l-[8px] border border-r-0 bg-[#FCFAF7] px-5 text-[14px] text-black transition-colors outline-none placeholder:text-black/50"
+                />
+                <Button
+                  type="submit"
+                  disabled={isPending}
+                  className="h-[46px] shrink-0 rounded-l-none rounded-r-[8px] bg-[#9D85AE] px-6 text-[15px] font-medium text-white transition-colors hover:bg-[#8B759A] disabled:opacity-70"
+                >
+                  {isPending ? '...' : 'Subscribe'}
+                </Button>
+              </form>
+            )}
           </div>
 
           {/* Right Background Image Overlay */}

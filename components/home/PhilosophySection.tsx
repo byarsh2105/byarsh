@@ -26,11 +26,6 @@ export default function PhilosophySection() {
                 </div>
               ))}
             </div>
-
-            <button className="text-primary mt-8 inline-flex w-fit items-center gap-2 text-[16px] leading-[1.9] font-normal tracking-[0.005em] transition-all hover:gap-3">
-              Read our philosophy
-              <span>→</span>
-            </button>
           </div>
         </div>
       </Container>

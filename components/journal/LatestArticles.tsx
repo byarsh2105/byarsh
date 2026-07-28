@@ -1,39 +1,21 @@
 import Container from '@/components/layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
+import { latestArticlesSection } from '@/src/content/journal';
 
 export default function LatestArticles() {
-  const articles = [
-    {
-      title: 'The Feel-Good Books I Keep Coming Back To',
-      category: 'BOOKS',
-      readTime: '6 min read',
-      date: 'July 18, 2026',
-      image: '/images/journal/article-1.jpg',
-      href: '/journal/the-feel-good-books',
-    },
-    {
-      title: "A Slow Morning in Udaipur I'll Never Forget",
-      category: 'TRAVEL',
-      readTime: '7 min read',
-      date: 'July 15, 2026',
-      image: '/images/journal/article-2.jpg',
-      href: '/journal/a-slow-morning-in-udaipur',
-    },
-  ];
+  const { title, button, articles } = latestArticlesSection;
 
   return (
     <section className="py-12">
       <Container>
         <div className="border-border mb-10 flex items-end justify-between border-t pt-10">
-          <h2 className="font-heading text-foreground text-[42px]">
-            Latest Articles
-          </h2>
+          <h2 className="font-heading text-foreground text-[42px]">{title}</h2>
           <Link
-            href="/journal"
+            href={button.href}
             className="text-primary hover:text-primary/80 flex items-center gap-2 font-medium transition-colors"
           >
-            View all articles
+            {button.text}
             <svg
               width="18"
               height="18"
@@ -59,8 +41,8 @@ export default function LatestArticles() {
             >
               <div className="bg-muted relative mb-6 aspect-[16/9] overflow-hidden rounded-2xl">
                 <Image
-                  src={article.image}
-                  alt={article.title}
+                  src={article.image.src}
+                  alt={article.image.alt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />

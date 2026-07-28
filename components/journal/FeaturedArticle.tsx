@@ -1,6 +1,7 @@
 import Container from '@/components/layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
+import { featuredArticle } from '@/src/content/journal';
 
 export default function FeaturedArticle() {
   return (
@@ -10,17 +11,28 @@ export default function FeaturedArticle() {
           {/* Left Content */}
           <div>
             <p className="text-primary mb-4 text-[15px] font-bold tracking-widest uppercase">
-              FEATURED
+              {featuredArticle.category}
             </p>
 
             <h2 className="font-heading text-foreground mb-6 text-[42px] leading-[1.1] tracking-[-0.02em]">
-              How Building ByArsh Changed the Way I Think About the Internet
+              {featuredArticle.title}
             </h2>
 
-            <p className="text-foreground/80 mb-8 max-w-[440px] text-[19px] leading-[1.7]">
-              Building ByArsh taught me that creating something meaningful takes
-              patience more than perfection.
+            <p className="text-foreground/80 mb-6 max-w-[440px] text-[19px] leading-[1.7]">
+              {featuredArticle.excerpt}
             </p>
+
+            {/* Tags */}
+            <div className="mb-8 flex flex-wrap gap-2">
+              {featuredArticle.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="bg-primary/5 text-primary rounded-full px-3 py-1 text-[13px] font-medium tracking-wide"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
             <div className="text-muted-foreground mb-10 flex items-center gap-6 text-[16px]">
               <div className="flex items-center gap-2">
@@ -37,7 +49,7 @@ export default function FeaturedArticle() {
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
-                <span>8 min read</span>
+                <span>{featuredArticle.readingTime}</span>
               </div>
               <span className="bg-border h-1 w-1 rounded-full" />
               <div className="flex items-center gap-2">
@@ -56,15 +68,15 @@ export default function FeaturedArticle() {
                   <line x1="8" x2="8" y1="2" y2="6" />
                   <line x1="3" x2="21" y1="10" y2="10" />
                 </svg>
-                <span>July 2026</span>
+                <span>{featuredArticle.publishedDate}</span>
               </div>
             </div>
 
             <Link
-              href="/journal/how-building-byarsh-changed-the-way"
+              href={featuredArticle.button.href}
               className="text-primary border-primary/30 hover:border-primary inline-flex items-center gap-2 border-b pb-1 text-[19px] font-medium transition-colors"
             >
-              Read Article
+              {featuredArticle.button.text}
               <svg
                 width="18"
                 height="18"
@@ -84,8 +96,8 @@ export default function FeaturedArticle() {
           {/* Right Image */}
           <div className="bg-muted relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
-              src="/images/journal/featured-article.jpg"
-              alt="Featured Article"
+              src={featuredArticle.image.src}
+              alt={featuredArticle.image.alt}
               fill
               className="object-cover"
             />

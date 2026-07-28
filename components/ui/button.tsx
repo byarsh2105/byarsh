@@ -2,11 +2,13 @@ import { ButtonHTMLAttributes } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+  variant?: string;
 }
 
 export default function Button({
   children,
   className = '',
+  variant,
   ...props
 }: ButtonProps) {
   return (

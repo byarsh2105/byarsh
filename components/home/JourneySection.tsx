@@ -1,6 +1,7 @@
 import Container from '@/components/layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
+import { journeyPreview } from '@/src/content/timeline';
 
 export default function JourneySection() {
   return (
@@ -11,8 +12,8 @@ export default function JourneySection() {
 
           <div className="relative h-[280px] overflow-hidden bg-[#EBE5DF] lg:h-auto">
             <Image
-              src="https://images.unsplash.com/photo-1542228262-3d663b306a53?q=80&w=2071&auto=format&fit=crop"
-              alt="Journey"
+              src={journeyPreview.image.src}
+              alt={journeyPreview.image.alt}
               fill
               className="object-cover transition-transform duration-700 hover:scale-[1.02]"
             />
@@ -33,24 +34,30 @@ export default function JourneySection() {
               {/* Heading */}
 
               <h2 className="font-heading text-[42px] leading-[0.95] tracking-[-0.03em] text-[#1B1815]">
-                My Journey
+                {journeyPreview.title}
               </h2>
 
               {/* Description */}
 
               <p className="mt-5 text-[16px] leading-[2] tracking-[0.005em] text-[#5F5954]">
-                A timeline of learning, career,
-                <br />
-                travel, and personal milestones.
+                {journeyPreview.description.split('\n').map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    {index <
+                      journeyPreview.description.split('\n').length - 1 && (
+                      <br />
+                    )}
+                  </span>
+                ))}
               </p>
 
               {/* CTA */}
 
               <Link
-                href="/journey"
+                href={journeyPreview.button.href}
                 className="group text-primary mt-9 inline-flex items-center gap-2 text-[16px] transition-all"
               >
-                <span>Read my journey</span>
+                <span>{journeyPreview.button.text}</span>
 
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
