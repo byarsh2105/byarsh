@@ -21,7 +21,7 @@ export default function JourneySection() {
 
           {/* Right Content */}
 
-          <div className="relative flex items-center border-l border-[#EEE7DF] px-12 py-12 lg:px-20 lg:py-16">
+          <div className="relative flex items-center border-t border-[#EEE7DF] px-6 py-8 md:px-12 md:py-12 lg:border-t-0 lg:border-l lg:px-20 lg:py-16">
             <div className="max-w-[430px]">
               {/* Small Decorative Label */}
 
@@ -33,7 +33,7 @@ export default function JourneySection() {
 
               {/* Heading */}
 
-              <h2 className="font-heading text-[42px] leading-[0.95] tracking-[-0.03em] text-[#1B1815]">
+              <h2 className="font-heading text-[32px] leading-[0.95] tracking-[-0.03em] text-[#1B1815] md:text-[42px]">
                 {journeyPreview.title}
               </h2>
 
@@ -72,7 +72,7 @@ export default function JourneySection() {
               alt=""
               width={230}
               height={300}
-              className="pointer-events-none absolute top-1/2 right-8 -translate-y-1/2 opacity-75 select-none"
+              className="pointer-events-none absolute top-1/2 right-8 hidden -translate-y-1/2 opacity-75 select-none lg:block"
             />
           </div>
         </div>

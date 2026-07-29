@@ -1,5 +1,6 @@
 import Container from '@/components/layout/Container';
 import Image from 'next/image';
+import { contactHero } from '@/src/content/contact';
 
 export default function ContactHero() {
   return (
@@ -9,22 +10,23 @@ export default function ContactHero() {
           {/* Left */}
           <div className="z-10 w-full pt-10 lg:w-auto lg:shrink-0">
             <h1 className="font-heading text-foreground mb-4 text-[64px] leading-none tracking-[-0.02em] sm:text-[72px] lg:text-[84px]">
-              Let's Talk
+              {contactHero.title}
             </h1>
 
             <div className="my-8 h-[2px] w-10 rounded-full bg-[#B092C5]"></div>
 
             <p className="font-heading mb-10 max-w-[400px] text-[32px] leading-[1.25] font-medium tracking-[-0.01em] text-[#1D1B18] sm:text-[38px]">
-              Whether you have an idea,
-              <br />
-              a question,
-              <br />
-              or simply want to say hello.
+              {contactHero.subtitleLines.map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < contactHero.subtitleLines.length - 1 && <br />}
+                </span>
+              ))}
             </p>
 
             <div className="mb-4">
               <p className="font-signature text-primary/70 text-[32px] lowercase italic sm:text-[38px]">
-                I'd love to hear from you.
+                {contactHero.signature}
               </p>
             </div>
           </div>

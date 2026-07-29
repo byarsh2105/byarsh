@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import Container from '@/components/layout/Container';
 import { site } from '@/src/content/site';
 import { subscribeAction } from '@/app/actions/subscribe';
@@ -9,20 +9,16 @@ export default function NewsletterSection() {
   const { newsletter } = site;
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const [isPending, startTransition] = useTransition();
+  const [state, formAction, isPending] = useActionState(subscribeAction, {
+    success: false,
+    message: '',
+  });
 
-  const handleAction = (formData: FormData) => {
-    startTransition(async () => {
-      const result = await subscribeAction(formData);
-      if (result.error) {
-        console.warn(result.error);
-        // Fallback to success UI anyway for a smooth experience if email service isn't setup
-        setIsSubscribed(true);
-      } else {
-        setIsSubscribed(true);
-      }
-    });
-  };
+  useEffect(() => {
+    if (state.success) {
+      setIsSubscribed(true);
+    }
+  }, [state]);
 
   return (
     <section
@@ -53,32 +49,37 @@ export default function NewsletterSection() {
           </div>
 
           {/* Right: Form */}
-          <div className="relative z-10 flex items-center">
+          <div className="relative z-10 flex w-full items-center justify-center lg:w-auto lg:justify-start">
             {isSubscribed ? (
-              <div className="flex w-full min-w-[380px] items-center justify-center rounded-md border border-[#DDD5CC] bg-white py-3 text-[15px] font-medium text-green-700 shadow-sm">
+              <div className="flex w-full max-w-[380px] items-center justify-center rounded-md border border-[#DDD5CC] bg-white py-3 text-[15px] font-medium text-green-700 shadow-sm sm:min-w-[380px]">
                 You are subscribed!
               </div>
             ) : (
-              <form
-                action={handleAction}
-                className="flex w-full min-w-[380px] overflow-hidden rounded-md border border-[#DDD5CC] bg-white shadow-sm"
-              >
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder={newsletter.inputPlaceholder}
-                  className="flex-1 bg-transparent px-5 py-3 text-[14px] outline-none placeholder:text-[#A8A29B]"
-                />
-
-                <button
-                  type="submit"
-                  disabled={isPending}
-                  className="bg-primary hover:bg-primary/90 px-8 text-[14px] font-medium text-white transition disabled:opacity-70"
+              <div className="flex w-full max-w-[380px] flex-col gap-2 sm:min-w-[380px]">
+                <form
+                  action={formAction}
+                  className="flex w-full overflow-hidden rounded-md border border-[#DDD5CC] bg-white shadow-sm"
                 >
-                  {isPending ? '...' : newsletter.buttonText}
-                </button>
-              </form>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder={newsletter.inputPlaceholder}
+                    className="flex-1 bg-transparent px-5 py-3 text-[14px] outline-none placeholder:text-[#A8A29B]"
+                  />
+
+                  <button
+                    type="submit"
+                    disabled={isPending}
+                    className="bg-primary hover:bg-primary/90 px-8 text-[14px] font-medium text-white transition disabled:opacity-70"
+                  >
+                    {isPending ? '...' : newsletter.buttonText}
+                  </button>
+                </form>
+                {!state.success && state.message && (
+                  <p className="text-[13px] text-red-500">{state.message}</p>
+                )}
+              </div>
             )}
           </div>
         </div>

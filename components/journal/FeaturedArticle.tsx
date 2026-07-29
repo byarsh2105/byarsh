@@ -2,6 +2,7 @@ import Container from '@/components/layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
 import { featuredArticle } from '@/src/content/journal';
+import ViewCounter from './article/ViewCounter';
 
 export default function FeaturedArticle() {
   return (
@@ -34,8 +35,8 @@ export default function FeaturedArticle() {
               ))}
             </div>
 
-            <div className="text-muted-foreground mb-10 flex items-center gap-6 text-[16px]">
-              <div className="flex items-center gap-2">
+            <div className="text-muted-foreground mb-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-[16px]">
+              <div className="flex shrink-0 items-center gap-2">
                 <svg
                   width="16"
                   height="16"
@@ -51,8 +52,8 @@ export default function FeaturedArticle() {
                 </svg>
                 <span>{featuredArticle.readingTime}</span>
               </div>
-              <span className="bg-border h-1 w-1 rounded-full" />
-              <div className="flex items-center gap-2">
+              <span className="bg-border h-1 w-1 shrink-0 rounded-full" />
+              <div className="flex shrink-0 items-center gap-2">
                 <svg
                   width="16"
                   height="16"
@@ -70,10 +71,14 @@ export default function FeaturedArticle() {
                 </svg>
                 <span>{featuredArticle.publishedDate}</span>
               </div>
+              <span className="bg-border h-1 w-1 shrink-0 rounded-full" />
+              <div className="shrink-0">
+                <ViewCounter slug={featuredArticle.slug} />
+              </div>
             </div>
 
             <Link
-              href={featuredArticle.button.href}
+              href={`/journal/${featuredArticle.slug}`}
               className="text-primary border-primary/30 hover:border-primary inline-flex items-center gap-2 border-b pb-1 text-[19px] font-medium transition-colors"
             >
               {featuredArticle.button.text}

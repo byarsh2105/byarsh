@@ -7,11 +7,11 @@ export default function PhilosophySection() {
       <Container>
         <div className="grid items-stretch lg:grid-cols-[480px_1fr]">
           {/* Left Image */}
-          <div className="w-full bg-[#EBE5DF]" />
+          <div className="min-h-[250px] w-full bg-[#EBE5DF] lg:min-h-0" />
 
           {/* Right Content */}
-          <div className="flex h-full flex-col justify-center bg-[#F5EFF7] p-12">
-            <h2 className="font-heading text-[40px] leading-none tracking-[-0.03em] text-[#1B1815]">
+          <div className="flex h-full flex-col justify-center bg-[#F5EFF7] p-8 lg:p-12">
+            <h2 className="font-heading text-[32px] leading-none tracking-[-0.03em] text-[#1B1815] md:text-[40px]">
               The ByArsh Philosophy
             </h2>
 

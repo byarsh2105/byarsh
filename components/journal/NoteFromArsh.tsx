@@ -1,4 +1,5 @@
 import Container from '@/components/layout/Container';
+import { journalHero } from '@/src/content/journal';
 
 export default function NoteFromArsh() {
   return (
@@ -8,7 +9,7 @@ export default function NoteFromArsh() {
           {/* Left Pill */}
           <div className="flex shrink-0 items-center justify-center rounded-2xl bg-[#f4ebf9] px-10 py-6">
             <span className="font-signature text-foreground text-[36px] lowercase italic">
-              A note from arsh ♡
+              {journalHero.noteFromArsh.label}
             </span>
           </div>
 
@@ -18,14 +19,11 @@ export default function NoteFromArsh() {
           {/* Right Text */}
           <div className="max-w-[480px]">
             <p className="text-foreground/80 mb-6 text-[17px] leading-[1.8]">
-              I started ByArsh to create a quieter corner of the internet— one
-              where curiosity, creativity, and thoughtful ideas can grow. Every
-              article here is part of my journey, and I'm glad you're here to
-              share it.
+              {journalHero.noteFromArsh.text}
             </p>
             <div className="flex w-full justify-end">
               <span className="font-signature text-primary/80 text-[36px] lowercase italic">
-                - Arsh ♡
+                {journalHero.noteFromArsh.signature}
               </span>
             </div>
           </div>

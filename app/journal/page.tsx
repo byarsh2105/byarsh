@@ -1,9 +1,7 @@
 import Header from '@/components/layout/Header';
 import JournalHero from '@/components/journal/JournalHero';
 import NoteFromArsh from '@/components/journal/NoteFromArsh';
-import CategoriesNav from '@/components/journal/CategoriesNav';
-import FeaturedArticle from '@/components/journal/FeaturedArticle';
-import LatestArticles from '@/components/journal/LatestArticles';
+import JournalContentWrapper from '@/components/journal/JournalContentWrapper';
 import StayInTouch from '@/components/journal/StayInTouch';
 import QuoteDivider from '@/components/shared/QuoteDivider';
 import Footer from '@/components/layout/Footer';
@@ -16,9 +14,7 @@ export default function JournalPage() {
       <main>
         <JournalHero />
         <NoteFromArsh />
-        <CategoriesNav />
-        <FeaturedArticle />
-        <LatestArticles />
+        <JournalContentWrapper />
         <StayInTouch />
       </main>
 

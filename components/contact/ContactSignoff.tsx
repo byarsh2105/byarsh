@@ -1,4 +1,5 @@
 import Container from '@/components/layout/Container';
+import { contactSignoff } from '@/src/content/contact';
 
 export default function ContactSignoff() {
   return (
@@ -6,28 +7,29 @@ export default function ContactSignoff() {
       <Container>
         <div className="relative z-10 flex flex-col items-center justify-center text-center">
           <div className="text-primary/70 mb-4 font-serif text-[60px] leading-none">
-            “
+            {contactSignoff.quoteMark}
           </div>
 
           <h2 className="font-heading text-foreground mb-2 text-[22px] leading-[1.4] font-medium sm:text-[26px]">
-            Thanks for stopping by.
-            <br />
-            I hope this little corner of the internet
-            <br />
-            made your day a little better.
+            {contactSignoff.messageLines.map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < contactSignoff.messageLines.length - 1 && <br />}
+              </span>
+            ))}
           </h2>
 
           <div className="mb-2">
             <span className="text-muted-foreground mr-2">—</span>
             <span className="font-signature text-primary text-[32px] lowercase italic">
-              Arsh
+              {contactSignoff.name}
             </span>
           </div>
 
           <div className="flex w-full max-w-[700px] items-center gap-6">
             <div className="h-[1px] flex-1 border-b-2 border-dotted border-[#B092C5]/80"></div>
             <span className="font-signature text-primary pt-2 text-[36px] whitespace-nowrap lowercase italic">
-              See you soon.
+              {contactSignoff.farewell}
             </span>
             <div className="h-[1px] flex-1 border-b-2 border-dotted border-[#B092C5]/80"></div>
           </div>

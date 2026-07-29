@@ -1,5 +1,6 @@
 import Container from '@/components/layout/Container';
 import Image from 'next/image';
+import { journalHero } from '@/src/content/journal';
 
 export default function JournalHero() {
   return (
@@ -13,7 +14,7 @@ export default function JournalHero() {
 
             <div className="flex items-center">
               <p className="font-signature text-primary text-[46px] leading-none">
-                My Journal
+                {journalHero.label}
               </p>
 
               <Image
@@ -27,14 +28,13 @@ export default function JournalHero() {
 
             {/* Heading */}
 
-            <h1 className="font-heading text-foreground text-[64px] leading-[1.05] tracking-[-0.03em] sm:text-[72px] lg:text-[84px]">
-              Thoughts,
-              <br />
-              stories, and
-              <br />
-              lessons from
-              <br />
-              my journey.
+            <h1 className="font-heading text-foreground text-[52px] leading-[1.05] tracking-[-0.03em] sm:text-[64px] lg:text-[84px]">
+              {journalHero.titleLines.map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < journalHero.titleLines.length - 1 && <br />}
+                </span>
+              ))}
             </h1>
 
             {/* Purple Line */}
@@ -44,21 +44,16 @@ export default function JournalHero() {
             {/* Description */}
 
             <p className="max-w-[450px] text-[16px] leading-[1.9] font-normal tracking-[0.005em] text-[#2B2B2B]">
-              A collection of thoughts, stories, poetry, and lessons I'm
-              learning along the way. on this text , Welcome to ByArsh—a calm
-              digital journal where stories, books, poetry, technology, travel,
-              and thoughtful ideas come together. Every page is created with
-              intention, inviting you to slow down, stay curious, and keep
-              learning.{' '}
+              {journalHero.description}
             </p>
           </div>
 
           {/* Right Image */}
 
-          <div className="relative h-[720px] overflow-hidden rounded-[6px] bg-[#EFE8E0]">
+          <div className="relative h-[400px] w-full overflow-hidden rounded-[6px] bg-[#EFE8E0] md:h-[500px] lg:h-[720px]">
             <Image
-              src="/images/journal/journal-hero.jpg"
-              alt="Journal Hero"
+              src={journalHero.image.src}
+              alt={journalHero.image.alt}
               fill
               className="object-cover"
             />

@@ -19,7 +19,7 @@ export default function LibraryPage() {
         {/* Massive 3D Box Wrapping Both Sections */}
         <section className="pt-0">
           <Container>
-            <div className="rounded-[36px] border border-black/[0.02] bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] lg:p-12">
+            <div className="rounded-[24px] border border-black/[0.02] bg-white p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] sm:p-8 md:rounded-[36px] lg:p-12">
               <CurrentlyReading />
 
               {/* Light separator line */}

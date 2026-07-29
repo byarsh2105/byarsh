@@ -9,18 +9,21 @@ const resend = isValidKey ? new Resend(apiKey) : null;
 const OWNER_EMAIL = process.env.OWNER_EMAIL || 'you@example.com';
 const FROM_EMAIL = process.env.FROM_EMAIL || 'onboarding@resend.dev';
 
-export async function subscribeAction(formData: FormData) {
+export async function subscribeAction(prevState: any, formData: FormData) {
+  if (!formData || !formData.get) {
+    console.error('Invalid formData received:', formData);
+    return { message: 'Invalid form submission', success: false };
+  }
   const email = formData.get('email') as string;
 
   if (!email || typeof email !== 'string') {
-    return { error: 'Invalid email address' };
+    return { message: 'Invalid email address', success: false };
   }
 
-  // If no Resend API key is configured, just simulate success (useful for dev/testing)
+  // If no Resend API key is configured, return an error
   if (!resend) {
-    console.log('[Simulated Subscription] Email:', email);
-    console.warn('RESEND_API_KEY is not set. Simulated success.');
-    return { success: true };
+    console.error('RESEND_API_KEY is not set.');
+    return { message: 'Newsletter service is not configured.', success: false };
   }
 
   try {
@@ -38,7 +41,10 @@ export async function subscribeAction(formData: FormData) {
 
     if (ownerEmailResult.error) {
       console.error('Failed to send owner email:', ownerEmailResult.error);
-      return { error: 'Failed to subscribe. Please try again later.' };
+      return {
+        message: 'Failed to subscribe. Please try again later.',
+        success: false,
+      };
     }
 
     // 2. Send "Thank You" Auto-Reply to Subscriber
@@ -77,9 +83,12 @@ export async function subscribeAction(formData: FormData) {
       // We still return success if they subscribed, but maybe log it
     }
 
-    return { success: true };
+    return { message: 'Successfully subscribed!', success: true };
   } catch (error) {
     console.error('Failed to send subscription emails:', error);
-    return { error: 'Failed to subscribe. Please try again later.' };
+    return {
+      message: 'Failed to subscribe. Please try again later.',
+      success: false,
+    };
   }
 }

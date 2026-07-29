@@ -1,55 +1,21 @@
 import Container from '@/components/layout/Container';
 import Link from 'next/link';
-import { Mail, Users, Camera, Code2, ArrowRightLeft } from 'lucide-react';
+import { ArrowRightLeft } from 'lucide-react';
+import { connectOptions } from '@/src/content/contact';
 
 export default function ConnectOptions() {
-  const options = [
-    {
-      title: 'Email',
-      desc: 'Drop me a note anytime.',
-      linkText: 'hello@byarsh.com',
-      href: 'mailto:hello@byarsh.com',
-      icon: Mail,
-      isEmail: true,
-    },
-    {
-      title: 'LinkedIn',
-      desc: "Let's connect",
-      linkText: '',
-      href: 'https://linkedin.com',
-      icon: Users,
-      isEmail: false,
-    },
-    {
-      title: 'Instagram',
-      desc: 'Behind the scenes',
-      linkText: '',
-      href: 'https://instagram.com',
-      icon: Camera,
-      isEmail: false,
-    },
-    {
-      title: 'GitHub',
-      desc: "Things I'm building",
-      linkText: '',
-      href: 'https://github.com',
-      icon: Code2,
-      isEmail: false,
-    },
-  ];
-
   return (
     <section className="relative pt-4 pb-12">
       <Container>
         <div className="mb-8 text-center">
           <h2 className="font-heading text-foreground mb-4 text-[28px] font-semibold">
-            Ways to Connect
+            {connectOptions.title}
           </h2>
           <div className="mx-auto mt-4 h-[2px] w-16 rounded-full bg-[#B092C5]"></div>
         </div>
 
         <div className="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {options.map((opt, index) => {
+          {connectOptions.options.map((opt, index) => {
             const Icon = opt.icon;
             return (
               <div

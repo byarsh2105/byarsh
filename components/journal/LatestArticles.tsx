@@ -2,18 +2,43 @@ import Container from '@/components/layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
 import { latestArticlesSection } from '@/src/content/journal';
+import ViewCounter from './article/ViewCounter';
 
-export default function LatestArticles() {
-  const { title, button, articles } = latestArticlesSection;
+interface Article {
+  slug: string;
+  category: string;
+  title: string;
+  readingTime: string;
+  publishedDate: string;
+  image: { src: string; alt: string };
+}
+
+interface LatestArticlesProps {
+  articles: Article[];
+}
+
+export default function LatestArticles({ articles }: LatestArticlesProps) {
+  const { title, button } = latestArticlesSection;
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const element = document.getElementById('latest-articles');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section className="py-12">
+    <section id="latest-articles" className="scroll-mt-24 py-12">
       <Container>
-        <div className="border-border mb-10 flex items-end justify-between border-t pt-10">
-          <h2 className="font-heading text-foreground text-[42px]">{title}</h2>
-          <Link
-            href={button.href}
-            className="text-primary hover:text-primary/80 flex items-center gap-2 font-medium transition-colors"
+        <div className="border-border mb-10 flex flex-col items-start justify-between gap-4 border-t pt-10 sm:flex-row sm:items-end">
+          <h2 className="font-heading text-foreground text-[36px] sm:text-[42px]">
+            {title}
+          </h2>
+          <a
+            href="#latest-articles"
+            onClick={handleScroll}
+            className="text-primary hover:text-primary/80 flex shrink-0 cursor-pointer items-center gap-2 font-medium transition-colors"
           >
             {button.text}
             <svg
@@ -29,14 +54,14 @@ export default function LatestArticles() {
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
-          </Link>
+          </a>
         </div>
 
         <div className="grid gap-10 md:grid-cols-2">
           {articles.map((article) => (
             <Link
-              key={article.href}
-              href={article.href}
+              key={article.slug}
+              href={`/journal/${article.slug}`}
               className="group block"
             >
               <div className="bg-muted relative mb-6 aspect-[16/9] overflow-hidden rounded-2xl">
@@ -53,10 +78,14 @@ export default function LatestArticles() {
               <h3 className="font-heading text-foreground group-hover:text-primary mb-4 text-[28px] leading-tight transition-colors">
                 {article.title}
               </h3>
-              <div className="text-muted-foreground flex items-center gap-3 text-[15px]">
-                <span>{article.readTime}</span>
-                <span className="bg-border h-1 w-1 rounded-full" />
-                <span>{article.date}</span>
+              <div className="text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px]">
+                <span className="shrink-0">{article.readingTime}</span>
+                <span className="bg-border h-1 w-1 shrink-0 rounded-full" />
+                <span className="shrink-0">{article.publishedDate}</span>
+                <span className="bg-border h-1 w-1 shrink-0 rounded-full" />
+                <div className="shrink-0">
+                  <ViewCounter slug={article.slug} />
+                </div>
               </div>
             </Link>
           ))}

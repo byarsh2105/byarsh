@@ -13,7 +13,7 @@ export default function JournalSection() {
         {/* Heading */}
 
         <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center text-center">
-          <h2 className="font-heading text-[56px] leading-none tracking-[-0.02em]">
+          <h2 className="font-heading text-[40px] leading-none tracking-[-0.02em] md:text-[56px]">
             {latestJournal.title}
           </h2>
 
@@ -28,7 +28,7 @@ export default function JournalSection() {
 
         {/* Journal Cards */}
 
-        <div className="grid gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {journalPosts
             .filter((post) => post.featured && post.published)
             .map((post) => (

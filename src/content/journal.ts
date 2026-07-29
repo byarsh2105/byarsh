@@ -1,3 +1,29 @@
+export const journalHero = {
+  label: 'My Journal',
+  titleLines: ['Thoughts,', 'stories, and', 'lessons from', 'my journey.'],
+  description:
+    "A collection of thoughts, stories, poetry, and lessons I'm learning along the way. Welcome to ByArsh—a calm digital journal where stories, books, poetry, technology, travel, and thoughtful ideas come together. Every page is created with intention, inviting you to slow down, stay curious, and keep learning.",
+  image: {
+    src: '/images/journal/journal-hero.jpg',
+    alt: 'Journal Hero',
+  },
+  noteFromArsh: {
+    label: 'A note from arsh ♡',
+    text: "I started ByArsh to create a quieter corner of the internet— one where curiosity, creativity, and thoughtful ideas can grow. Every article here is part of my journey, and I'm glad you're here to share it.",
+    signature: '- Arsh ♡',
+  },
+};
+
+export const journalCategories = [
+  'All',
+  'Books',
+  'Travel',
+  'Poetry',
+  'Reflections',
+  'Personal Growth',
+  'Self Discovery',
+];
+
 export const featuredArticle = {
   id: 'building-byarsh',
 
@@ -21,8 +47,9 @@ export const featuredArticle = {
 
   button: {
     text: 'Read Article',
-    href: '/journal/building-byarsh',
+    href: '/journal/how-building-byarsh-changed-my-thinking',
   },
+  slug: 'how-building-byarsh-changed-my-thinking',
 };
 
 export const latestArticlesSection = {
@@ -31,89 +58,97 @@ export const latestArticlesSection = {
     text: 'View all articles',
     href: '/journal',
   },
-  articles: [
-    {
-      title: 'The Feel-Good Books I Keep Coming Back To',
-      category: 'BOOKS',
-      readTime: '6 min read',
-      date: '1st August 2026',
-      image: {
-        src: '/images/journal/article-1.jpg',
-        alt: 'The Feel-Good Books I Keep Coming Back To',
-      },
-      href: '/journal/the-feel-good-books',
-    },
-    {
-      title: "A Slow Morning in Himachal Pradesh I'll Never Forget",
-      category: 'TRAVEL',
-      readTime: '7 min read',
-      date: '1st August 2026',
-      image: {
-        src: '/images/journal/article-2.jpg',
-        alt: "A Slow Morning in Himachal Pradesh I'll Never Forget",
-      },
-      href: '/journal/a-slow-morning-in-himachal-pradesh',
-    },
-  ],
 };
 
 export const journalPosts = [
   {
-    slug: 'how-i-structure-odoo-modules',
-    featured: true,
-    published: true,
-    category: 'Software Engineering',
-    title: 'How I Structure Odoo Modules for Scalability',
-    excerpt:
-      'A deep dive into building scalable and maintainable Odoo modules for enterprise applications.',
-    publishedDate: '1st August 2026',
-    readingTime: '6 min read',
-    image: {
-      src: '/images/journal/software-engineering.jpg',
-      alt: 'How I Structure Odoo Modules for Scalability',
-    },
-  },
-  {
-    slug: 'you-can-heal-your-life',
-    featured: true,
+    slug: 'books-that-quietly-changed-my-thinking',
+    featured: false,
     published: true,
     category: 'Books',
-    title: 'You Can Heal Your Life — A Life Changing Read',
-    excerpt: 'My thoughts on one of the most impactful books I have ever read.',
-    publishedDate: '1st August 2026',
-    readingTime: '4 min read',
-    image: {
-      src: '/images/journal/books.jpg',
-      alt: 'You Can Heal Your Life',
-    },
-  },
-  {
-    slug: 'a-december-trip-to-himachal-pradesh',
-    featured: true,
-    published: true,
-    category: 'Travel',
-    title: 'A December Trip to Himachal Pradesh',
-    excerpt: 'Finding peace and tranquility in the mountains.',
-    publishedDate: '1st August 2026',
+    title: 'Books That Quietly Changed My Thinking',
+    excerpt:
+      'Some books entertain us, some educate us, and a few quietly change the way we see the world.',
+    publishedDate: 'July 2026',
     readingTime: '5 min read',
     image: {
-      src: '/images/journal/travel.jpg',
-      alt: 'Himachal Pradesh Travel',
+      src: '/images/journal/books.jpg',
+      alt: 'Books That Quietly Changed My Thinking',
     },
   },
   {
-    slug: 'the-power-of-journaling',
-    featured: true,
+    slug: 'december-in-manali',
+    featured: false,
     published: true,
-    category: 'Personal Growth',
-    title: 'The Power of Journaling Every Day',
+    category: 'Travel',
+    title: 'December in Manali: Learning to Fall in Love with Winter',
     excerpt:
-      'How a simple daily habit transformed my mental clarity and productivity.',
-    publishedDate: '1st August 2026',
+      "I travelled to Manali expecting snow-covered mountains and beautiful views. What I didn't expect was how winter would quietly teach me to slow down.",
+    publishedDate: 'July 2026',
+    readingTime: '6 min read',
+    image: {
+      src: '/images/journal/travel.jpg',
+      alt: 'December in Manali',
+    },
+  },
+  {
+    slug: 'poetry-in-motion',
+    featured: false,
+    published: true,
+    category: 'Poetry',
+    title: 'Poetry in Motion: Observing the Quiet Details',
+    excerpt:
+      'Sometimes the most profound moments are the quietest. A small collection of thoughts and poetic observations from my daily life.',
+    publishedDate: 'August 2026',
+    readingTime: '3 min read',
+    image: {
+      src: '/images/journal/article-1.jpg',
+      alt: 'Poetry in Motion',
+    },
+  },
+  {
+    slug: 'reflections-on-time',
+    featured: false,
+    published: true,
+    category: 'Reflections',
+    title: 'Reflections on Time and How We Spend It',
+    excerpt:
+      'Time is the only resource we can never get back. A reflection on intentionally choosing where to direct our focus and energy.',
+    publishedDate: 'August 2026',
     readingTime: '4 min read',
     image: {
+      src: '/images/journal/article-2.jpg',
+      alt: 'Reflections on Time',
+    },
+  },
+  {
+    slug: 'embracing-the-process',
+    featured: false,
+    published: true,
+    category: 'Personal Growth',
+    title: 'Embracing the Process: Why the Middle is the Hardest Part',
+    excerpt:
+      'Starting is exciting. Finishing is rewarding. But the messy middle is where the real growth happens.',
+    publishedDate: 'August 2026',
+    readingTime: '5 min read',
+    image: {
       src: '/images/journal/personal-growth.jpg',
-      alt: 'Journaling',
+      alt: 'Embracing the Process',
+    },
+  },
+  {
+    slug: 'finding-stillness',
+    featured: false,
+    published: true,
+    category: 'Self Discovery',
+    title: 'Finding Stillness in a Loud World',
+    excerpt:
+      'We are constantly connected, constantly reachable, and constantly stimulated. How do we find quietness?',
+    publishedDate: 'August 2026',
+    readingTime: '4 min read',
+    image: {
+      src: '/images/journal/featured-article.jpg',
+      alt: 'Finding Stillness',
     },
   },
 ];

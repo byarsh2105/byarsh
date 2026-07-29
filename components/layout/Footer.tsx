@@ -122,8 +122,8 @@ export default function Footer() {
           </div>
 
           {/* Right: Copyright */}
-          <div className="relative flex min-w-[200px] items-end justify-end pt-4 pr-[300px]">
-            <p className="relative z-10 mb-6 text-[15px] leading-7 text-black">
+          <div className="relative flex min-w-[200px] items-center justify-center pt-8 pr-0 lg:items-end lg:justify-end lg:pt-4 lg:pr-[300px]">
+            <p className="relative z-10 mb-6 text-center text-[15px] leading-7 text-black lg:text-left">
               {footer.copyrightLines.map((line, index) => (
                 <span key={index}>
                   {line}
@@ -137,7 +137,7 @@ export default function Footer() {
               alt=""
               width={1000}
               height={1000}
-              className="pointer-events-none absolute object-contain"
+              className="pointer-events-none absolute hidden object-contain lg:block"
               style={{
                 right: '-10px',
                 bottom: '-15px',

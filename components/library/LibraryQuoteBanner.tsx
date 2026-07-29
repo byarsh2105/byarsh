@@ -1,5 +1,6 @@
 import Container from '@/components/layout/Container';
 import Image from 'next/image';
+import { libraryQuoteBanner } from '@/src/content/books';
 
 export default function LibraryQuoteBanner() {
   return (
@@ -8,8 +9,8 @@ export default function LibraryQuoteBanner() {
         {/* Background Image (Right Side Fade) */}
         <div className="absolute top-0 right-0 bottom-0 z-0 w-3/4 md:w-1/2">
           <Image
-            src="/images/library/quote-bg.jpg"
-            alt="Books and Coffee"
+            src={libraryQuoteBanner.image}
+            alt="Library Quote Background"
             fill
             className="mask-image-to-l object-cover object-left"
             style={{
@@ -27,12 +28,11 @@ export default function LibraryQuoteBanner() {
 
           <div className="max-w-[480px]">
             <p className="font-heading text-foreground mb-4 text-[22px] leading-[1.3] sm:text-[26px]">
-              I do believe something very magical can happen when you read a
-              good book.
+              {libraryQuoteBanner.quote}
             </p>
             <p className="text-muted-foreground flex items-center gap-2 text-[15px]">
               <span className="bg-muted-foreground h-[1px] w-4"></span>
-              J.K. Rowling
+              {libraryQuoteBanner.author}
             </p>
           </div>
         </div>

@@ -148,3 +148,38 @@
     font-family: var(--font-body), serif;
   }
 }
+
+@layer components {
+  .article-prose {
+    @apply text-foreground text-[18px] leading-[1.8];
+  }
+  .article-prose p {
+    @apply mb-6;
+  }
+  .article-prose p:first-of-type::first-letter {
+    @apply text-primary font-heading float-left mt-2 mr-3 text-[72px] leading-[0.8];
+  }
+  .article-prose blockquote {
+    @apply border-border relative my-12 border-y py-10 text-center;
+  }
+  .article-prose blockquote::before {
+    content: '“';
+    @apply bg-background text-primary font-heading absolute -top-8 left-1/2 -translate-x-1/2 px-4 text-[48px];
+  }
+  .article-prose blockquote p {
+    @apply font-heading m-0 text-[28px] leading-[1.3] font-medium italic md:text-[32px];
+  }
+  .article-prose blockquote p::first-letter {
+    @apply text-foreground float-none mt-0 mr-0 text-[28px] leading-[1.3] md:text-[32px];
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

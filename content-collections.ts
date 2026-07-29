@@ -12,6 +12,9 @@ const journal = defineCollection({
     date: z.string(),
     category: z.string(),
     tags: z.array(z.string()),
+    readingTime: z.string().optional(),
+    image: z.string().optional(),
+    content: z.string().optional(),
     published: z.boolean().default(true),
   }),
   transform: async (document, context) => {
@@ -26,5 +29,5 @@ const journal = defineCollection({
 });
 
 export default defineConfig({
-  collections: [journal],
+  content: [journal],
 });

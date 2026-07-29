@@ -1,5 +1,6 @@
 import Container from '@/components/layout/Container';
 import Image from 'next/image';
+import { myStory } from '@/src/content/about';
 
 export default function MyStory() {
   return (
@@ -10,8 +11,8 @@ export default function MyStory() {
             {/* Left Image */}
             <div className="relative mx-auto aspect-[4/3] w-full max-w-[360px] overflow-hidden rounded-sm lg:mx-0 lg:max-w-none">
               <Image
-                src="/images/journey/my-story.jpg"
-                alt="About Me"
+                src={myStory.image.src}
+                alt={myStory.image.alt}
                 fill
                 className="object-cover"
               />
@@ -20,28 +21,20 @@ export default function MyStory() {
             {/* Right Content */}
             <div className="relative pr-4 lg:pr-32">
               <h2 className="font-heading text-foreground mb-2 text-[26px] font-semibold sm:text-[30px]">
-                About Me
+                {myStory.title}
               </h2>
 
               <div className="my-8 h-[2px] w-10 rounded-full bg-[#B092C5]"></div>
 
               <div className="space-y-4 text-[16px] leading-[1.6] text-black sm:text-[17px]">
-                <p>Hi, I'm Arsh.</p>
+                {myStory.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
 
                 <ul className="list-disc space-y-3 pl-5 marker:text-[#8E69AB]">
-                  <li>
-                    I believe learning doesn't end with school or work. It's
-                    something we carry throughout life.
-                  </li>
-                  <li>
-                    ByArsh began as a place to document what I'm building,
-                    learning, reading, exploring, and becoming.
-                  </li>
-                  <li>
-                    My hope is that this space encourages others to stay
-                    curious, create with intention, and enjoy the process of
-                    growing.
-                  </li>
+                  {myStory.bullets.map((bullet, index) => (
+                    <li key={index}>{bullet}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -51,8 +44,8 @@ export default function MyStory() {
           <div className="pointer-events-none absolute top-1/2 right-6 hidden -translate-y-1/2 opacity-70 lg:block">
             <div className="relative h-[300px] w-[180px]">
               <Image
-                src="/images/journey/floral-branch.png"
-                alt="Floral branch"
+                src={myStory.decorativeImage.src}
+                alt={myStory.decorativeImage.alt}
                 fill
                 className="object-contain mix-blend-multiply"
               />

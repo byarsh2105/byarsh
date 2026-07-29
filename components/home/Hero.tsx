@@ -13,10 +13,10 @@ export default function Hero() {
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[600px_1fr] xl:gap-24">
           {/* Left */}
 
-          <div className="pl-8 xl:pl-8">
+          <div className="pl-0 md:pl-8 xl:pl-8">
             <span className="text-primary mb-1 inline-block text-2xl">✦</span>
 
-            <div className="font-heading text-[84px] leading-[0.98] font-medium tracking-[0.020em] xl:text-[68px]">
+            <div className="font-heading text-[48px] leading-[0.98] font-medium tracking-[0.020em] md:text-[68px] lg:text-[84px] xl:text-[68px]">
               {hero.titleLines.map((line, index) => {
                 if (index === hero.titleLines.length - 1) {
                   return (
@@ -29,7 +29,7 @@ export default function Hero() {
                 return <h1 key={index}>{line}</h1>;
               })}
             </div>
-            <p className="font-heading mt-8 max-w-[440px] text-[26px] leading-[1.4] font-medium tracking-[0.01em] text-[#2B2B2B]">
+            <p className="font-heading mt-8 max-w-[440px] text-[20px] leading-[1.4] font-medium tracking-[0.01em] text-[#2B2B2B] md:text-[26px]">
               {hero.subtitle}
             </p>
 
@@ -37,7 +37,7 @@ export default function Hero() {
               {hero.description}
             </p>
 
-            <div className="mt-10 flex gap-5">
+            <div className="mt-10 flex flex-wrap gap-4 md:gap-5">
               {hero.buttons.map((button, index) => (
                 <Link key={index} href={button.href}>
                   <Button

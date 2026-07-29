@@ -1,64 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  finishedBooks,
+  wishlistBooks,
+  favoriteBooksInfo,
+} from '@/src/content/books';
 
 export default function BookCollections() {
-  const finishedBooks = [
-    {
-      title: 'The Alchemist',
-      author: 'Paulo Coelho',
-      date: 'Finished May 2024',
-      badge: '♡ Loved this',
-      image: '/images/library/alchemist.jpg',
-    },
-    {
-      title: 'Ikigai',
-      author: 'Hector Garcia',
-      date: 'Finished Mar 2024',
-      badge: '♡ Life Changing',
-      image: '/images/library/ikigai.jpg',
-    },
-    {
-      title: 'The Psychology of Money',
-      author: 'Morgan Housel',
-      date: 'Finished Apr 2024',
-      badge: '♡ Highly Recommended',
-      image: '/images/library/psychology.jpg',
-    },
-  ];
-
-  const wishlistBooks = [
-    {
-      title: 'The Song of Achilles',
-      author: 'Madeline Miller',
-      image: '/images/library/achilles.jpg',
-    },
-    {
-      title: 'The Midnight Library',
-      author: 'Matt Haig',
-      image: '/images/library/midnight.jpg',
-    },
-    {
-      title: 'Sapiens',
-      author: 'Yuval Noah Harari',
-      image: '/images/library/sapiens.jpg',
-    },
-  ];
-
   return (
     <div className="w-full">
       <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
         {/* Column 1: Finished Books */}
         <div>
-          <div className="mb-8 flex items-center justify-between pb-4">
+          <div className="mb-8 pb-4">
             <h3 className="font-heading text-foreground text-[26px] font-semibold">
               Finished Books
             </h3>
-            <Link
-              href="/library/finished"
-              className="flex items-center gap-1 text-[17px] font-medium text-[#B092C5] transition-colors hover:text-[#9A7BB0]"
-            >
-              View all <span>→</span>
-            </Link>
           </div>
 
           <div className="flex flex-col gap-6">
@@ -89,36 +46,21 @@ export default function BookCollections() {
               </div>
             ))}
           </div>
-
-          <div className="mt-8 text-right">
-            <Link
-              href="/library/finished"
-              className="text-[17px] font-medium text-[#B092C5] transition-colors hover:text-[#9A7BB0]"
-            >
-              View all <span>→</span>
-            </Link>
-          </div>
         </div>
 
         {/* Column 2: Favorite Books (Centered Carousel Style) */}
         <div className="flex flex-col">
-          <div className="mb-8 flex items-center justify-between pb-4">
+          <div className="mb-8 pb-4">
             <h3 className="font-heading text-foreground text-[26px] font-semibold">
               Favorite Books
             </h3>
-            <Link
-              href="/library/favorites"
-              className="flex items-center gap-1 text-[17px] font-medium text-[#B092C5] transition-colors hover:text-[#9A7BB0]"
-            >
-              View all <span>→</span>
-            </Link>
           </div>
 
           <div className="flex flex-1 flex-col items-center justify-center pt-4">
             <div className="relative mb-8 aspect-[1/1.5] w-[180px] overflow-hidden rounded-sm shadow-2xl">
               <Image
-                src="/images/library/mockingbird.jpg"
-                alt="To Kill a Mockingbird"
+                src={favoriteBooksInfo.cover}
+                alt="Favorite Book Cover"
                 fill
                 className="object-cover"
               />
@@ -131,23 +73,17 @@ export default function BookCollections() {
             </div>
 
             <p className="max-w-[220px] text-center text-[16px] leading-[1.6] text-[#666666]">
-              Books that have stayed with me over the years.
+              {favoriteBooksInfo.note}
             </p>
           </div>
         </div>
 
         {/* Column 3: Reading Wishlist */}
         <div>
-          <div className="mb-8 flex items-center justify-between pb-4">
+          <div className="mb-8 pb-4">
             <h3 className="font-heading text-foreground text-[26px] font-semibold">
               Reading Wishlist
             </h3>
-            <Link
-              href="/library/wishlist"
-              className="flex items-center gap-1 text-[17px] font-medium text-[#B092C5] transition-colors hover:text-[#9A7BB0]"
-            >
-              View all <span>→</span>
-            </Link>
           </div>
 
           <div className="flex flex-col gap-6">
@@ -169,15 +105,6 @@ export default function BookCollections() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-8 text-right">
-            <Link
-              href="/library/wishlist"
-              className="text-[17px] font-medium text-[#B092C5] transition-colors hover:text-[#9A7BB0]"
-            >
-              View all <span>→</span>
-            </Link>
           </div>
         </div>
       </div>

@@ -15,8 +15,8 @@ export default function ProjectsLibrarySection() {
           <div className="grid items-stretch gap-12 lg:grid-cols-2">
             {/* Featured Projects */}
 
-            <div className="flex h-full flex-col pr-8">
-              <h2 className="font-heading text-center text-[36px] leading-none text-[#1B1815]">
+            <div className="mb-12 flex h-full flex-col pr-0 lg:mb-0 lg:pr-8">
+              <h2 className="font-heading text-center text-[28px] leading-none text-[#1B1815] md:text-[36px]">
                 {featuredProjects.title}
               </h2>
 
@@ -24,7 +24,7 @@ export default function ProjectsLibrarySection() {
                 {featuredProjects.description}
               </p>
 
-              <div className="mt-10 grid grid-cols-3 gap-4">
+              <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {projects
                   .filter((project) => project.featured && project.published)
                   .map((project) => (
@@ -50,8 +50,8 @@ export default function ProjectsLibrarySection() {
 
             {/* Library */}
 
-            <div className="flex h-full flex-col border-l border-[#ECE5DC] pl-8">
-              <h2 className="font-heading text-center text-[36px] leading-none text-[#1B1815]">
+            <div className="flex h-full flex-col border-t border-[#ECE5DC] pt-12 pl-0 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
+              <h2 className="font-heading text-center text-[28px] leading-none text-[#1B1815] md:text-[36px]">
                 {librarySection.title}
               </h2>
 
@@ -59,7 +59,7 @@ export default function ProjectsLibrarySection() {
                 {librarySection.description}
               </p>
 
-              <div className="mt-10 grid grid-cols-3 gap-5">
+              <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {books.map((book) => (
                   <LibraryCard
                     key={book.slug}
