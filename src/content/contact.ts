@@ -16,8 +16,8 @@ export const connectOptions = {
     {
       title: 'Email',
       desc: 'Drop me a note anytime.',
-      linkText: 'hello@byarsh.com',
-      href: 'mailto:hello@byarsh.com',
+      linkText: 'arshshaikh1520@gmail.com',
+      href: 'mailto:arshshaikh1520@gmail.com',
       icon: Mail,
       isEmail: true,
     },
@@ -63,6 +63,7 @@ export const contactForm = {
       'What is one thing you are truly grateful for today?',
       'If you feel comfortable, I would absolutely love it if you included it in your message. Sharing gratitude makes this little corner of the internet a warmer place.',
     ],
+    emailPlaceholder: 'Your Email (Optional)',
     inputPlaceholder: 'I am grateful for...',
     buttonText: 'Send',
   },

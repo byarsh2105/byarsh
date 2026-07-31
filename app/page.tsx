@@ -7,6 +7,14 @@ import JourneySection from '@/components/home/JourneySection';
 import NewsletterSection from '@/components/home/NewsletterSection';
 import Footer from '@/components/layout/Footer';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description:
+    'Welcome to ByArsh—a calm digital journal where stories, books, poetry, technology, travel, and thoughtful ideas come together.',
+};
+
 export default function Home() {
   return (
     <>

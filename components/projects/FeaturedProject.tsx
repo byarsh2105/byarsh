@@ -1,8 +1,12 @@
 import Container from '@/components/layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
+import { projects } from '@/src/content/projects';
 
 export default function FeaturedProject() {
+  const featured =
+    projects.find((p) => p.slug === 'attendance-automation') || projects[0];
+
   return (
     <section className="py-10">
       <Container>
@@ -14,38 +18,30 @@ export default function FeaturedProject() {
                 Featured Project
               </p>
 
-              <h2 className="font-heading text-foreground text-[54px] leading-[1.08] tracking-[-0.04em]">
-                Attendance
-                <br />
-                Automation
-                <br />
-                System
+              <h2 className="font-heading text-foreground text-[42px] leading-[1.08] tracking-[-0.04em] lg:text-[54px]">
+                {featured.title}
               </h2>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                {['Odoo 19', 'Python', 'PostgreSQL', 'JavaScript'].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      className="text-foreground/70 rounded-full bg-white px-5 py-2.5 text-[16px] shadow-sm"
-                    >
-                      {tag}
-                    </span>
-                  ),
-                )}
+                {featured.technologies.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-white px-5 py-2.5 text-[16px] font-medium text-[#1F1B18] shadow-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
 
-              <p className="text-foreground/75 mt-8 max-w-[420px] text-[18px] leading-8">
-                A complete attendance automation system for Odoo that handles
-                check-in/out, late mark, early exit, notifications and violation
-                tracking.
+              <p className="mt-8 max-w-[420px] text-[18px] leading-8 text-[#1F1B18]">
+                {featured.shortDescription || featured.description}
               </p>
 
               <Link
-                href="/projects/attendance"
+                href={featured.button.href}
                 className="text-primary mt-10 inline-flex items-center text-[17px] font-medium transition-all hover:gap-3"
               >
-                View Case Study
+                {featured.button.text}
                 <span className="ml-2">→</span>
               </Link>
             </div>
@@ -53,8 +49,8 @@ export default function FeaturedProject() {
             {/* Right */}
             <div className="relative aspect-[16/10] overflow-hidden rounded-[18px] bg-white shadow-[0_12px_40px_rgba(0,0,0,0.05)]">
               <Image
-                src="/images/projects/featured-project.png"
-                alt="Attendance Dashboard"
+                src={featured.featuredImage || featured.image}
+                alt={featured.title}
                 fill
                 priority
                 className="object-cover"

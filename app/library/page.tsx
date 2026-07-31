@@ -8,6 +8,13 @@ import QuoteDivider from '@/components/shared/QuoteDivider';
 import Footer from '@/components/layout/Footer';
 import Container from '@/components/layout/Container';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Library',
+  description: 'Books that inspire and shape my journey.',
+};
+
 export default function LibraryPage() {
   return (
     <>

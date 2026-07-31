@@ -6,6 +6,14 @@ import StayConnected from '@/components/contact/StayConnected';
 import ContactSignoff from '@/components/contact/ContactSignoff';
 import Footer from '@/components/layout/Footer';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    'Get in touch for collaborations, questions, or just to say hello.',
+};
+
 export default function ContactPage() {
   return (
     <>

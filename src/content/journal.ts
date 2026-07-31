@@ -63,7 +63,7 @@ export const latestArticlesSection = {
 export const journalPosts = [
   {
     slug: 'books-that-quietly-changed-my-thinking',
-    featured: false,
+    featured: true,
     published: true,
     category: 'Books',
     title: 'Books That Quietly Changed My Thinking',
@@ -78,7 +78,7 @@ export const journalPosts = [
   },
   {
     slug: 'december-in-manali',
-    featured: false,
+    featured: true,
     published: true,
     category: 'Travel',
     title: 'December in Manali: Learning to Fall in Love with Winter',
@@ -93,7 +93,7 @@ export const journalPosts = [
   },
   {
     slug: 'poetry-in-motion',
-    featured: false,
+    featured: true,
     published: true,
     category: 'Poetry',
     title: 'Poetry in Motion: Observing the Quiet Details',
@@ -108,7 +108,7 @@ export const journalPosts = [
   },
   {
     slug: 'reflections-on-time',
-    featured: false,
+    featured: true,
     published: true,
     category: 'Reflections',
     title: 'Reflections on Time and How We Spend It',

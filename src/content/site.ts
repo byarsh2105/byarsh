@@ -25,7 +25,7 @@ export const site = {
     ],
 
     image: {
-      src: '/images/home/hero.jpg',
+      src: '/images/home/byarsh-hero.png',
       alt: 'Journaling workspace',
     },
   },

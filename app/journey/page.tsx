@@ -9,6 +9,13 @@ import SharedNewsletter from '@/components/shared/SharedNewsletter';
 import QuoteDivider from '@/components/shared/QuoteDivider';
 import Footer from '@/components/layout/Footer';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Journey',
+  description: 'A timeline of my growth, career, and adventures.',
+};
+
 export default function JourneyPage() {
   return (
     <>

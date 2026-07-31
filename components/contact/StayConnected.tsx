@@ -65,8 +65,7 @@ export default function StayConnected() {
             )}
           </div>
 
-          {/* Right Background Image Overlay */}
-          <div className="absolute top-0 right-0 bottom-0 z-0 w-[55%] opacity-100">
+          <div className="absolute top-0 right-0 bottom-0 z-0 w-[80%] opacity-30 md:w-[55%] md:opacity-100">
             <Image
               src={stayConnected.backgroundImage.src}
               alt={stayConnected.backgroundImage.alt}

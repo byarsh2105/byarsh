@@ -9,7 +9,7 @@ export default function AboutHero() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left */}
           <div className="z-10 pt-10">
-            <h1 className="font-heading text-foreground mb-4 text-[48px] leading-none tracking-[-0.02em] sm:text-[64px] lg:text-[84px]">
+            <h1 className="font-heading text-foreground mb-4 text-[52px] leading-[1.05] tracking-[-0.03em] sm:text-[64px] lg:text-[84px]">
               {aboutHero.title}
             </h1>
 

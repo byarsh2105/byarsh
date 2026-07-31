@@ -9,7 +9,7 @@ export default function LibraryHero() {
         <div className="grid items-start gap-16 lg:grid-cols-[520px_1fr]">
           {/* Left Content */}
           <div className="lg:pt-20">
-            <h1 className="font-heading text-foreground text-[48px] leading-[1.05] tracking-[-0.03em] sm:text-[64px] lg:text-[84px]">
+            <h1 className="font-heading text-foreground text-[52px] leading-[1.05] tracking-[-0.03em] sm:text-[64px] lg:text-[84px]">
               {libraryHero.title}
             </h1>
 

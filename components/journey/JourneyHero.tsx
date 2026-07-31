@@ -9,7 +9,7 @@ export default function JourneyHero() {
         <div className="flex flex-col gap-12 pt-10 pb-4 lg:flex-row lg:items-center lg:justify-between lg:pt-16 lg:pb-8">
           {/* Left Content */}
           <div className="relative z-10 pt-4 lg:w-[460px] lg:shrink-0">
-            <h1 className="font-heading text-foreground mb-4 text-[48px] leading-none tracking-[-0.02em] sm:text-[64px] lg:text-[84px]">
+            <h1 className="font-heading text-foreground mb-4 text-[52px] leading-[1.05] tracking-[-0.03em] sm:text-[64px] lg:text-[84px]">
               {journeyHero.title}
             </h1>
 

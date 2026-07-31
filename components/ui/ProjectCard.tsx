@@ -18,7 +18,7 @@ export default function ProjectCard({
 
   return (
     <Link href={href} className="block h-full">
-      <article className="h-full rounded-[12px] border border-[#ECE5DC] bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-sm">
+      <article className="flex h-full flex-col rounded-[12px] border border-[#ECE5DC] bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-sm">
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#F6F0FB]">
           <Icon className="text-primary" size={24} />
         </div>
@@ -27,7 +27,7 @@ export default function ProjectCard({
           {title}
         </h3>
 
-        <p className="text-muted-foreground/90 mt-3 text-[13px] leading-[1.6]">
+        <p className="mt-3 text-[13px] leading-[1.7] text-[#4F4A45]">
           {description}
         </p>
       </article>

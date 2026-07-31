@@ -6,7 +6,7 @@ import { Resend } from 'resend';
 const apiKey = process.env.RESEND_API_KEY;
 const isValidKey = apiKey && apiKey.startsWith('re_');
 const resend = isValidKey ? new Resend(apiKey) : null;
-const OWNER_EMAIL = process.env.OWNER_EMAIL || 'you@example.com';
+const OWNER_EMAIL = process.env.OWNER_EMAIL || 'arshshaikh1520@gmail.com';
 const FROM_EMAIL = process.env.FROM_EMAIL || 'onboarding@resend.dev';
 
 export async function subscribeAction(prevState: any, formData: FormData) {

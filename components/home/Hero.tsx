@@ -16,7 +16,7 @@ export default function Hero() {
           <div className="pl-0 md:pl-8 xl:pl-8">
             <span className="text-primary mb-1 inline-block text-2xl">✦</span>
 
-            <div className="font-heading text-[48px] leading-[0.98] font-medium tracking-[0.020em] md:text-[68px] lg:text-[84px] xl:text-[68px]">
+            <div className="font-heading text-foreground text-[52px] leading-[1.05] tracking-[-0.03em] sm:text-[64px] lg:text-[84px]">
               {hero.titleLines.map((line, index) => {
                 if (index === hero.titleLines.length - 1) {
                   return (

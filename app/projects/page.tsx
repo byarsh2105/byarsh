@@ -7,16 +7,30 @@ import ProjectsCTA from '@/components/projects/ProjectsCTA';
 import QuoteDivider from '@/components/shared/QuoteDivider';
 import Footer from '@/components/layout/Footer';
 
-export default function ProjectsPage() {
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description: 'A collection of ideas, experiments, and products I have built.',
+};
+
+export default async function ProjectsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ filter?: string }>;
+}) {
+  const { filter } = await searchParams;
+  const activeFilter = filter || 'All';
+
   return (
     <>
       <Header />
 
       <main>
         <ProjectsHero />
-        <ProjectsCategories />
+        <ProjectsCategories activeFilter={activeFilter} />
         <FeaturedProject />
-        <AllProjects />
+        <AllProjects activeFilter={activeFilter} />
         <ProjectsCTA />
       </main>
 

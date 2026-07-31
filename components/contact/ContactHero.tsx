@@ -9,7 +9,7 @@ export default function ContactHero() {
         <div className="flex h-full flex-col gap-8 lg:flex-row lg:items-center lg:gap-16">
           {/* Left */}
           <div className="z-10 w-full pt-10 lg:w-auto lg:shrink-0">
-            <h1 className="font-heading text-foreground mb-4 text-[64px] leading-none tracking-[-0.02em] sm:text-[72px] lg:text-[84px]">
+            <h1 className="font-heading text-foreground mb-4 text-[52px] leading-[1.05] tracking-[-0.03em] sm:text-[64px] lg:text-[84px]">
               {contactHero.title}
             </h1>
 

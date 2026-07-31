@@ -32,7 +32,9 @@ export default function ProjectsLibrarySection() {
                       key={project.slug}
                       icon={project.icon}
                       title={project.title}
-                      description={project.description}
+                      description={
+                        project.shortDescription || project.description
+                      }
                       href={`/projects/${project.slug}`}
                     />
                   ))}
@@ -66,7 +68,7 @@ export default function ProjectsLibrarySection() {
                     title={book.title}
                     subtitle={book.subtitle}
                     image={book.image}
-                    href={`/library/${book.slug}`}
+                    href="/library"
                   />
                 ))}
               </div>

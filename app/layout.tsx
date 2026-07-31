@@ -28,8 +28,27 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: 'ByArsh',
-  description: 'Personal Portfolio',
+  metadataBase: new URL('https://byarsh.com'),
+  title: {
+    default: 'ByArsh - A place to pause, wonder, and grow.',
+    template: '%s | ByArsh',
+  },
+  description:
+    'Welcome to ByArsh—a calm digital journal where stories, books, poetry, technology, travel, and thoughtful ideas come together.',
+  openGraph: {
+    title: 'ByArsh',
+    description: 'A place to pause, wonder, and grow.',
+    url: 'https://byarsh.com',
+    siteName: 'ByArsh',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ByArsh',
+    description:
+      'A calm digital journal where stories, technology, and thoughtful ideas come together.',
+  },
 };
 
 export default function RootLayout({

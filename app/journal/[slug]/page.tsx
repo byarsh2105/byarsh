@@ -1,5 +1,7 @@
 import { allJournals } from 'content-collections';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+import { Suspense } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Container from '@/components/layout/Container';
@@ -17,13 +19,40 @@ interface PageProps {
   }>;
 }
 
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = allJournals.find((p) => p.slug === slug);
+
+  if (!post) {
+    return { title: 'Post Not Found' };
+  }
+
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      url: `https://byarsh.com/journal/${post.slug}`,
+      images: [
+        {
+          url: post.image || '/images/home/editorial-workspace.png',
+        },
+      ],
+    },
+  };
+}
+
 export async function generateStaticParams() {
   return allJournals.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default async function ArticlePage({ params }: PageProps) {
+async function JournalContent({ params }: PageProps) {
   const { slug } = await params;
   const post = allJournals.find((p) => p.slug === slug);
 
@@ -64,5 +93,13 @@ export default async function ArticlePage({ params }: PageProps) {
       </main>
       <Footer />
     </>
+  );
+}
+
+export default function Page({ params }: PageProps) {
+  return (
+    <Suspense fallback={null}>
+      <JournalContent params={params} />
+    </Suspense>
   );
 }

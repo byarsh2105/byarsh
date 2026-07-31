@@ -30,18 +30,26 @@ export const projects: Project[] = [
     id: 1,
     slug: 'attendance-automation',
 
-    title: 'Attendance Automation System',
+    title: 'Enterprise E-commerce Integration Platform',
 
-    shortDescription: 'A complete attendance automation system for Odoo.',
+    shortDescription:
+      'Designed and developed an enterprise-grade integration platform connecting Odoo with multiple external systems.',
 
     description:
-      'A complete attendance automation system handling check-in, check-out, notifications, violations, geo validation and reporting.',
+      'An enterprise-grade integration platform connecting Odoo with external systems to automate e-commerce operations, payment processing, shipping workflows, and mobile application services.',
 
     image: '/images/projects/p1.jpg',
 
     featuredImage: '/images/projects/featured-project.png',
 
-    technologies: ['Odoo 19', 'Python', 'PostgreSQL', 'JavaScript'],
+    technologies: [
+      'Odoo',
+      'Python',
+      'PostgreSQL',
+      'REST API',
+      'JSON',
+      'JavaScript',
+    ],
 
     featured: false,
     published: true,
@@ -61,59 +69,90 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    slug: 'odeo-custom-development',
-    title: 'Odeo Custom Development',
-    shortDescription: 'Business solutions built with Odoo.',
-    description: 'Business solutions built with Odoo.',
+    slug: 'smart-attendance',
+    title: 'Smart Attendance Management System',
+    shortDescription:
+      'Developed a customized attendance management solution in Odoo to streamline operations.',
+    description:
+      'Developed a customized attendance management solution in Odoo to streamline employee check-in/check-out tracking, automate attendance calculations, and simplify HR operations across multiple departments.',
     image: '/images/projects/p1.jpg',
     featuredImage: '/images/projects/featured-project.png',
-    technologies: ['Odoo'],
+    technologies: ['Odoo 16/17', 'Python', 'PostgreSQL', 'XML', 'ORM'],
     featured: true,
     published: true,
     icon: 'box',
     button: {
       text: 'View Project',
-      href: '/projects/odeo-custom-development',
+      href: '/projects/smart-attendance',
     },
     year: '2026',
-    category: 'Odoo',
+    category: 'HR Automation • Odoo',
   },
   {
     id: 3,
-    slug: 'open-source-contributions',
-    title: 'Open Source Contributions',
-    shortDescription: 'Giving back to the community.',
-    description: 'Giving back to the community.',
+    slug: 'employee-expense',
+    title: 'Employee Expense Portal',
+    shortDescription:
+      'Designed and customized an expense management portal allowing employees to submit reimbursements digitally.',
+    description:
+      'Designed and customized an expense management portal allowing employees to submit reimbursements digitally while enabling managers to review, approve, and track expenses efficiently.',
     image: '/images/projects/p1.jpg',
     featuredImage: '/images/projects/featured-project.png',
-    technologies: ['Open Source'],
+    technologies: ['Odoo', 'Python', 'PostgreSQL', 'XML', 'REST APIs'],
     featured: true,
     published: true,
     icon: 'code',
     button: {
       text: 'View Project',
-      href: '/projects/open-source-contributions',
+      href: '/projects/employee-expense',
     },
     year: '2026',
-    category: 'Open Source',
+    category: 'Workflow Automation • Odoo',
   },
   {
     id: 4,
-    slug: 'experiments-side-projects',
-    title: 'Experiments & Side Projects',
-    shortDescription: 'Ideas, prototypes, and experiments.',
-    description: 'Ideas, prototypes, and experiments.',
+    slug: 'portal-customization',
+    title: 'Website & Customer Portal Customization',
+    shortDescription:
+      'Customized the Odoo Website and Customer Portal to provide an improved digital experience.',
+    description:
+      'Customized the Odoo Website and Customer Portal to provide an improved digital experience through responsive interfaces, personalized dashboards, secure customer access, and enhanced business workflows.',
     image: '/images/projects/p1.jpg',
     featuredImage: '/images/projects/featured-project.png',
-    technologies: ['Next.js', 'React'],
+    technologies: ['Odoo Website', 'Python', 'XML', 'OWL', 'JavaScript', 'CSS'],
     featured: true,
     published: true,
     icon: 'bulb',
     button: {
       text: 'View Project',
-      href: '/projects/experiments-side-projects',
+      href: '/projects/portal-customization',
     },
     year: '2026',
-    category: 'Side Projects',
+    category: 'Frontend Development • Odoo',
   },
 ];
+
+export const projectsHero = {
+  title: 'Projects',
+  subtitleLines: [
+    'A collection of ideas,',
+    'experiments,',
+    "and products I've built.",
+  ],
+  buttonText: 'Explore Projects',
+  image: {
+    src: '/images/projects/projects-hero.png',
+    alt: 'Workspace setup',
+  },
+};
+
+export const projectsCTA = {
+  title: 'Have an idea in mind?',
+  description: "Let's build something meaningful together.",
+  buttonText: "Let's Talk",
+  buttonLink: '/contact#contact-form',
+  decorativeImage: {
+    src: '/images/decor/pp.png',
+    alt: 'Leaf',
+  },
+};

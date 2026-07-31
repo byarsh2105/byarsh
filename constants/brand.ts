@@ -10,5 +10,5 @@ export const BRAND = {
 
   website: 'https://byarsh.com',
 
-  email: 'hello@byarsh.com',
+  email: 'arshshaikh1520@gmail.com',
 } as const;
