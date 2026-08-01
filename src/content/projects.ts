@@ -30,7 +30,7 @@ export const projects: Project[] = [
     id: 1,
     slug: 'attendance-automation',
 
-    title: 'Enterprise E-commerce Integration Platform',
+    title: 'Mobile App Odoo API Integration',
 
     shortDescription:
       'Designed and developed an enterprise-grade integration platform connecting Odoo with multiple external systems.',
@@ -38,9 +38,9 @@ export const projects: Project[] = [
     description:
       'An enterprise-grade integration platform connecting Odoo with external systems to automate e-commerce operations, payment processing, shipping workflows, and mobile application services.',
 
-    image: '/images/projects/p1.jpg',
+    image: '/images/projects/mobile_api_integration.png',
 
-    featuredImage: '/images/projects/featured-project.png',
+    featuredImage: '/images/projects/mobile_api_integration.png',
 
     technologies: [
       'Odoo',
@@ -141,7 +141,7 @@ export const projectsHero = {
   ],
   buttonText: 'Explore Projects',
   image: {
-    src: '/images/projects/projects-hero.png',
+    src: '/images/project/project_homepage.jpeg',
     alt: 'Workspace setup',
   },
 };

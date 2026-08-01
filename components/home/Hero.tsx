@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section className="pt-20 pb-12 lg:pt-28 lg:pb-8">
       <Container>
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[600px_1fr] xl:gap-24">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[500px_1fr] xl:gap-20">
           {/* Left */}
 
           <div className="pl-0 md:pl-8 xl:pl-8">
@@ -57,7 +57,7 @@ export default function Hero() {
 
           {/* Right */}
 
-          <div className="relative -ml-0 h-[400px] w-full overflow-hidden rounded-[3px] shadow-sm lg:-ml-12 lg:h-[600px]">
+          <div className="relative h-[400px] w-full overflow-hidden rounded-[3px] shadow-sm lg:h-[600px]">
             <Image
               src={hero.image.src}
               alt={hero.image.alt}

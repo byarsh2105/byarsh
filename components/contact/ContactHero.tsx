@@ -31,9 +31,15 @@ export default function ContactHero() {
             </div>
           </div>
 
-          {/* Right Placeholder Section */}
-          <div className="border-primary/20 relative hidden h-full min-h-[400px] w-full max-w-[800px] flex-1 rounded-2xl border-2 border-dashed bg-[#FAF8F5]/50 lg:block">
-            {/* Space reserved for image */}
+          {/* Right Image Section */}
+          <div className="relative hidden h-[600px] w-full flex-1 overflow-hidden rounded-[24px] lg:block">
+            <Image
+              src="/images/lets_talk/lets_talks.jpeg"
+              alt="Let's Talk Workspace"
+              fill
+              className="object-cover object-top"
+              priority
+            />
           </div>
         </div>
       </Container>

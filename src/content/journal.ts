@@ -4,7 +4,7 @@ export const journalHero = {
   description:
     "A collection of thoughts, stories, poetry, and lessons I'm learning along the way. Welcome to ByArsh—a calm digital journal where stories, books, poetry, technology, travel, and thoughtful ideas come together. Every page is created with intention, inviting you to slow down, stay curious, and keep learning.",
   image: {
-    src: '/images/journal/journal-hero.jpg',
+    src: '/images/journal/journal_homepage.png',
     alt: 'Journal Hero',
   },
   noteFromArsh: {
@@ -35,7 +35,7 @@ export const featuredArticle = {
     'The story behind creating ByArsh—a calm digital journal where software engineering, books, travel, and thoughtful ideas come together.',
 
   image: {
-    src: '/images/journal/featured-article.jpg',
+    src: '/images/journal/building_byarsh.png',
     alt: 'Writing desk with notebook',
   },
 
@@ -72,7 +72,7 @@ export const journalPosts = [
     publishedDate: 'July 2026',
     readingTime: '5 min read',
     image: {
-      src: '/images/journal/books.jpg',
+      src: '/images/home/books_ref.png',
       alt: 'Books That Quietly Changed My Thinking',
     },
   },
@@ -81,13 +81,13 @@ export const journalPosts = [
     featured: true,
     published: true,
     category: 'Travel',
-    title: 'December in Manali: Learning to Fall in Love with Winter',
+    title: 'December in Manali: Where Winter Teaches You to Slow Down',
     excerpt:
       "I travelled to Manali expecting snow-covered mountains and beautiful views. What I didn't expect was how winter would quietly teach me to slow down.",
     publishedDate: 'July 2026',
     readingTime: '6 min read',
     image: {
-      src: '/images/journal/travel.jpg',
+      src: '/images/home/manali_muuntains.png',
       alt: 'December in Manali',
     },
   },
@@ -102,7 +102,7 @@ export const journalPosts = [
     publishedDate: 'August 2026',
     readingTime: '3 min read',
     image: {
-      src: '/images/journal/article-1.jpg',
+      src: '/images/home/poetry_homepage.png',
       alt: 'Poetry in Motion',
     },
   },
@@ -117,7 +117,7 @@ export const journalPosts = [
     publishedDate: 'August 2026',
     readingTime: '4 min read',
     image: {
-      src: '/images/journal/article-2.jpg',
+      src: '/images/home/time.png',
       alt: 'Reflections on Time',
     },
   },
@@ -132,7 +132,7 @@ export const journalPosts = [
     publishedDate: 'August 2026',
     readingTime: '5 min read',
     image: {
-      src: '/images/journal/personal-growth.jpg',
+      src: '/images/journal/trus_process.png',
       alt: 'Embracing the Process',
     },
   },
@@ -147,7 +147,7 @@ export const journalPosts = [
     publishedDate: 'August 2026',
     readingTime: '4 min read',
     image: {
-      src: '/images/journal/featured-article.jpg',
+      src: '/images/journal/finding_world.png',
       alt: 'Finding Stillness',
     },
   },

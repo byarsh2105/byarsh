@@ -10,16 +10,14 @@ export default function ProjectsHero() {
       <Container>
         <div className="relative grid items-center gap-12 py-10 lg:grid-cols-2 lg:py-16">
           {/* Right Image Background (Constrained to Container bounds) */}
-          <div className="absolute top-0 right-0 bottom-0 z-0 w-full overflow-hidden rounded-3xl bg-[#F2EBE1] lg:w-[55%]">
+          <div className="absolute top-0 right-0 bottom-0 z-0 w-full overflow-hidden rounded-3xl lg:w-[55%]">
             <Image
               src={projectsHero.image.src}
               alt={projectsHero.image.alt}
               fill
               priority
-              className="object-cover object-center opacity-95 mix-blend-multiply"
+              className="object-cover object-center"
             />
-            {/* Gradient Mask to fade it into background smoothly on the left side */}
-            <div className="from-background via-background/80 absolute inset-0 hidden w-[50%] bg-gradient-to-r to-transparent lg:block" />
           </div>
 
           {/* Left Content */}

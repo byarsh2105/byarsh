@@ -26,7 +26,7 @@ export default function BookCollections() {
                     src={book.image}
                     alt={book.title}
                     fill
-                    className="object-cover"
+                    className="scale-125 object-cover object-center"
                   />
                 </div>
                 <div>

@@ -1,5 +1,7 @@
 import Container from '@/components/layout/Container';
 import { philosophyPoints } from '@/constants/philosophy';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function PhilosophySection() {
   return (
@@ -7,7 +9,14 @@ export default function PhilosophySection() {
       <Container>
         <div className="grid items-stretch lg:grid-cols-[480px_1fr]">
           {/* Left Image */}
-          <div className="min-h-[250px] w-full bg-[#EBE5DF] lg:min-h-0" />
+          <div className="relative min-h-[250px] w-full overflow-hidden bg-[#EBE5DF] lg:min-h-0">
+            <Image
+              src="/images/home/philosophy.png"
+              alt="The ByArsh Philosophy"
+              fill
+              className="scale-[1.15] object-cover object-center"
+            />
+          </div>
 
           {/* Right Content */}
           <div className="flex h-full flex-col justify-center bg-[#F5EFF7] p-8 lg:p-12">
@@ -25,6 +34,15 @@ export default function PhilosophySection() {
                   </p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-8">
+              <Link href="/about">
+                <button className="text-primary/90 hover:text-primary inline-flex items-center gap-2 text-[13px] font-medium transition-all hover:gap-3">
+                  Read our philosophy
+                  <span>→</span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

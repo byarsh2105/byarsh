@@ -8,7 +8,7 @@ export const libraryHero = {
   ],
   badge: 'Every book leaves a mark.',
   image: {
-    src: '/images/library/library-hero.png',
+    src: '/images/library/book_shelf.png',
     alt: 'Books and Coffee',
   },
 };
@@ -30,7 +30,7 @@ export const books = [
     slug: 'favorite-books',
     title: 'Favorite Books',
     subtitle: 'Timeless reads I love.',
-    image: '/images/library/favorite-books.jpg',
+    image: '/images/library/fav_book.png',
   },
 ];
 
@@ -38,8 +38,7 @@ export const currentlyReading = {
   book: {
     title: 'Think Straight',
     author: 'Darius Foroux',
-    cover:
-      'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1287&auto=format&fit=crop',
+    cover: '/images/library/current_read.jpeg',
     progress: 45,
     progressStatus: 'In Progress',
     note: 'Learning to control my thoughts and eliminate mental clutter.',
@@ -56,24 +55,21 @@ export const finishedBooks = [
     author: 'John Green',
     date: 'Finished Jul 2024',
     badge: '♡ Loved this',
-    image:
-      'https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1498&auto=format&fit=crop',
+    image: '/images/library/book_fault_stars.jpg',
   },
   {
     title: 'Ikigai',
     author: 'Héctor García',
     date: 'Finished Mar 2024',
     badge: '♡ Life Changing',
-    image:
-      'https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=1470&auto=format&fit=crop',
+    image: '/images/library/book_ikigai.jpg',
   },
   {
     title: 'The Mountain Is You',
     author: 'Brianna Wiest',
     date: 'Finished Apr 2024',
     badge: '♡ Highly Recommended',
-    image:
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1470&auto=format&fit=crop',
+    image: '/images/library/book_mountain.jpg',
   },
 ];
 
@@ -81,20 +77,17 @@ export const wishlistBooks = [
   {
     title: 'Rework',
     author: 'Jason Fried',
-    image:
-      'https://images.unsplash.com/photo-1589998059171-9899ea86250a?q=80&w=1470&auto=format&fit=crop',
+    image: '/images/library/book_rework.jpg',
   },
   {
-    title: '8 Rules of Love',
-    author: 'Jay Shetty',
-    image:
-      'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?q=80&w=1293&auto=format&fit=crop',
+    title: 'The Forty Rules of Love',
+    author: 'Elif Shafak',
+    image: '/images/library/book_forty_rules_love.jpg',
   },
   {
     title: 'Atomic Habits',
     author: 'James Clear',
-    image:
-      'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1512&auto=format&fit=crop',
+    image: '/images/library/book_atomic_habits.jpg',
   },
 ];
 
