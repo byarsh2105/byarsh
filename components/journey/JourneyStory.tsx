@@ -14,7 +14,7 @@ export default function JourneyStory() {
                 src={journeyStory.image.src}
                 alt={journeyStory.image.alt}
                 fill
-                className="object-cover"
+                className="object-cover object-[center_75%]"
               />
             </div>
           </div>

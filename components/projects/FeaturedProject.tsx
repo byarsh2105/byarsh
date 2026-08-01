@@ -5,7 +5,7 @@ import { projects } from '@/src/content/projects';
 
 export default function FeaturedProject() {
   const featured =
-    projects.find((p) => p.slug === 'attendance-automation') || projects[0];
+    projects.find((p) => p.slug === 'enterprise-ecommerce') || projects[0];
 
   return (
     <section className="py-10">
@@ -15,7 +15,7 @@ export default function FeaturedProject() {
             {/* Left */}
             <div>
               <p className="text-primary/70 mb-5 text-[13px] font-semibold tracking-[0.22em] uppercase">
-                Featured Project
+                ⭐ Featured Project
               </p>
 
               <h2 className="font-heading text-foreground text-[42px] leading-[1.08] tracking-[-0.04em] lg:text-[54px]">

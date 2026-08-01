@@ -92,8 +92,7 @@ export const wishlistBooks = [
 ];
 
 export const favoriteBooksInfo = {
-  cover:
-    'https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=1470&auto=format&fit=crop', // Using Ikigai since it was mentioned as favorite
+  cover: '/images/library/book_master_emotions_yellow.jpg',
   note: 'Books that have stayed with me over the years.',
 };
 
@@ -101,7 +100,7 @@ export const libraryQuoteBanner = {
   quote:
     'I do believe something very magical can happen when you read a good book.',
   author: 'J.K. Rowling',
-  image: '/images/library/quote-bg.jpg',
+  image: '/images/library/book_magic.png',
 };
 
 export const libraryNewsletter = {

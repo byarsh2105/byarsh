@@ -30,7 +30,7 @@ export default function AboutHero() {
             </div>
           </div>
           {/* Right Image */}
-          <div className="relative hidden h-[400px] w-full overflow-hidden lg:block">
+          <div className="relative mt-4 block min-h-[300px] w-full shrink-0 overflow-hidden sm:min-h-[400px] lg:mt-0 lg:h-[500px]">
             <Image
               src={aboutHero.image.src}
               alt={aboutHero.image.alt}

@@ -23,7 +23,7 @@ export const aboutHero = {
   ],
   badge: 'Always learning. Always becoming.',
   image: {
-    src: '/images/journey/journey-hero.jpg',
+    src: '/images/about/about_home.png',
     alt: 'Workspace',
   },
 };
@@ -37,7 +37,7 @@ export const myStory = {
     'My hope is that this space encourages others to stay curious, create with intention, and enjoy the process of growing.',
   ],
   image: {
-    src: '/images/journey/my-story.jpg',
+    src: '/images/about/my_story_jr.png',
     alt: 'About Me',
   },
   decorativeImage: {
@@ -129,15 +129,15 @@ export const aboutFooterCards = {
   leftCard: {
     title: 'A Few Things About Me',
     facts: [
-      { text: 'Currently reading: The Song of Achilles' },
+      { text: 'Currently reading: Too good to be true' },
       { text: 'Favorite place to work: By the window with soft music' },
-      { text: 'Always accompanied by: A cup of chai' },
-      { text: 'Most used app: Notion' },
+      { text: 'Always accompanied by: exploring new things' },
+      { text: 'Most used app: Pinterest' },
       { text: 'A quote I live by: Progress, not perfection.' },
     ],
     backgroundImage: {
-      src: '/images/about/vase.jpg',
-      alt: 'Vase with dried flowers',
+      src: '',
+      alt: '',
     },
   },
   rightCard: {
@@ -146,8 +146,8 @@ export const aboutFooterCards = {
       "Whether you'd like to collaborate, share an idea, or simply say hello— I'd love to hear from you.",
     buttonText: "Let's Talk",
     backgroundImage: {
-      src: '/images/about/beach.jpg',
-      alt: 'Person at the beach',
+      src: '',
+      alt: '',
     },
   },
 };

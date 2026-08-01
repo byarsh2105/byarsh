@@ -32,20 +32,22 @@ export default function AboutFooterCards() {
             </div>
 
             {/* Right Background Image Overlay */}
-            <div className="absolute top-0 right-0 bottom-0 z-0 w-[80%] opacity-30 md:w-[45%] md:opacity-90">
-              <Image
-                src={aboutFooterCards.leftCard.backgroundImage.src}
-                alt={aboutFooterCards.leftCard.backgroundImage.alt}
-                fill
-                className="mask-image-to-l object-cover object-right"
-                style={{
-                  maskImage:
-                    'linear-gradient(to right, transparent, black 60%)',
-                  WebkitMaskImage:
-                    'linear-gradient(to right, transparent, black 60%)',
-                }}
-              />
-            </div>
+            {aboutFooterCards.leftCard.backgroundImage.src && (
+              <div className="absolute top-0 right-0 bottom-0 z-0 w-[80%] opacity-30 md:w-[45%] md:opacity-90">
+                <Image
+                  src={aboutFooterCards.leftCard.backgroundImage.src}
+                  alt={aboutFooterCards.leftCard.backgroundImage.alt}
+                  fill
+                  className="mask-image-to-l object-cover object-right"
+                  style={{
+                    maskImage:
+                      'linear-gradient(to right, transparent, black 60%)',
+                    WebkitMaskImage:
+                      'linear-gradient(to right, transparent, black 60%)',
+                  }}
+                />
+              </div>
+            )}
           </div>
 
           {/* Right Card: Let's build something meaningful */}
@@ -54,7 +56,7 @@ export default function AboutFooterCards() {
               <h3 className="font-heading mb-4 text-[30px] leading-[1.2] font-semibold text-black">
                 {aboutFooterCards.rightCard.title}
               </h3>
-              <p className="mb-8 text-[16px] leading-[1.6] font-bold text-black">
+              <p className="mb-8 text-[16px] leading-[1.6] font-medium text-black">
                 {aboutFooterCards.rightCard.description}
               </p>
 
@@ -67,20 +69,22 @@ export default function AboutFooterCards() {
             </div>
 
             {/* Right Background Image Overlay */}
-            <div className="absolute top-0 right-0 bottom-0 z-0 w-[80%] opacity-30 md:w-[50%] md:opacity-90">
-              <Image
-                src={aboutFooterCards.rightCard.backgroundImage.src}
-                alt={aboutFooterCards.rightCard.backgroundImage.alt}
-                fill
-                className="mask-image-to-l object-cover object-right"
-                style={{
-                  maskImage:
-                    'linear-gradient(to right, transparent, black 60%)',
-                  WebkitMaskImage:
-                    'linear-gradient(to right, transparent, black 60%)',
-                }}
-              />
-            </div>
+            {aboutFooterCards.rightCard.backgroundImage.src && (
+              <div className="absolute top-0 right-0 bottom-0 z-0 w-[80%] opacity-30 md:w-[50%] md:opacity-90">
+                <Image
+                  src={aboutFooterCards.rightCard.backgroundImage.src}
+                  alt={aboutFooterCards.rightCard.backgroundImage.alt}
+                  fill
+                  className="mask-image-to-l object-cover object-right"
+                  style={{
+                    maskImage:
+                      'linear-gradient(to right, transparent, black 60%)',
+                    WebkitMaskImage:
+                      'linear-gradient(to right, transparent, black 60%)',
+                  }}
+                />
+              </div>
+            )}
           </div>
         </div>
       </Container>

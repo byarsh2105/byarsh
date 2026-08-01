@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Container from '@/components/layout/Container';
 import Image from 'next/image';
+import Link from 'next/link';
 import { MDXContent } from '@content-collections/mdx/react';
 import StayConnected from '@/components/contact/StayConnected';
 
@@ -73,6 +74,15 @@ async function ProjectContent({ params }: PageProps) {
           />
           <Container className="relative z-10">
             <div className="mx-auto max-w-[1100px]">
+              <div className="mb-8">
+                <Link
+                  href="/projects"
+                  className="hover:text-primary inline-flex items-center text-[15px] font-medium text-[#4B5563] transition-colors"
+                >
+                  <span className="mr-2">←</span> Back to Projects
+                </Link>
+              </div>
+
               <div className="mb-6 flex items-center gap-3">
                 <span className="bg-primary h-2 w-2 animate-pulse rounded-full" />
                 <p className="text-primary font-mono text-[13px] font-bold tracking-[0.2em] uppercase">

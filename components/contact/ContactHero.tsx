@@ -4,9 +4,9 @@ import { contactHero } from '@/src/content/contact';
 
 export default function ContactHero() {
   return (
-    <section className="relative min-h-[480px] overflow-hidden pt-12 pb-0">
+    <section className="relative min-h-[480px] overflow-hidden pt-12 pb-12 lg:pb-0">
       <Container>
-        <div className="flex h-full flex-col gap-8 lg:flex-row lg:items-center lg:gap-16">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-16">
           {/* Left */}
           <div className="z-10 w-full pt-10 lg:w-auto lg:shrink-0">
             <h1 className="font-heading text-foreground mb-4 text-[52px] leading-[1.05] tracking-[-0.03em] sm:text-[64px] lg:text-[84px]">
@@ -32,9 +32,9 @@ export default function ContactHero() {
           </div>
 
           {/* Right Image Section */}
-          <div className="relative hidden h-[600px] w-full flex-1 overflow-hidden rounded-[24px] lg:block">
+          <div className="relative mt-8 block min-h-[350px] w-full shrink-0 overflow-hidden rounded-[24px] sm:min-h-[450px] lg:mt-0 lg:h-[600px] lg:flex-1">
             <Image
-              src="/images/lets_talk/lets_talks.jpeg"
+              src="/images/lets_talk/connect_home.jpeg"
               alt="Let's Talk Workspace"
               fill
               className="object-cover object-top"

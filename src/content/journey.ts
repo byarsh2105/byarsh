@@ -21,8 +21,8 @@ export const journeyHero = {
   ],
   badge: 'Still becoming.',
   image: {
-    src: '/images/journey/journey-hero.jpg',
-    alt: 'Hiker looking over mountains',
+    src: '/images/journey/journey_homeoage.png',
+    alt: 'Journey Header',
   },
 };
 
@@ -34,8 +34,8 @@ export const journeyStory = {
     'From writing my first lines of code to building ByArsh, every experience has shaped the way I think, create, and connect with others.',
   ],
   image: {
-    src: '/images/journey/my-story.jpg',
-    alt: 'Winding road',
+    src: '/images/journey/my_story_new.png',
+    alt: 'My Story',
   },
   decorativeImage: {
     src: '/images/journey/floral-branch.png',
@@ -120,7 +120,7 @@ export const whatsNext = {
     'The best is yet to come.',
   ],
   backgroundImage: {
-    src: '/images/journey/whats-next.jpg',
-    alt: 'Coastal road',
+    src: '/images/journey/whats_next.png',
+    alt: 'What is Next',
   },
 };

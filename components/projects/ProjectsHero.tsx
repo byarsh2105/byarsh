@@ -9,19 +9,8 @@ export default function ProjectsHero() {
     <section className="bg-background pt-16 pb-16">
       <Container>
         <div className="relative grid items-center gap-12 py-10 lg:grid-cols-2 lg:py-16">
-          {/* Right Image Background (Constrained to Container bounds) */}
-          <div className="absolute top-0 right-0 bottom-0 z-0 w-full overflow-hidden rounded-3xl lg:w-[55%]">
-            <Image
-              src={projectsHero.image.src}
-              alt={projectsHero.image.alt}
-              fill
-              priority
-              className="object-cover object-center"
-            />
-          </div>
-
           {/* Left Content */}
-          <div className="relative z-10">
+          <div className="relative z-10 pt-4 lg:pt-0">
             <h1 className="font-heading text-foreground text-[52px] leading-[1.05] tracking-[-0.03em] sm:text-[64px] lg:text-[84px]">
               {projectsHero.title}
             </h1>
@@ -44,6 +33,17 @@ export default function ProjectsHero() {
             >
               {projectsHero.buttonText} <span className="ml-2">→</span>
             </a>
+          </div>
+
+          {/* Right Image Section */}
+          <div className="relative mt-8 block min-h-[350px] w-full shrink-0 overflow-hidden rounded-3xl sm:min-h-[450px] lg:mt-0 lg:h-[600px] lg:flex-1">
+            <Image
+              src={projectsHero.image.src}
+              alt={projectsHero.image.alt}
+              fill
+              priority
+              className="object-cover object-center"
+            />
           </div>
         </div>
       </Container>
