@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Caveat, Allura, Lora } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import './globals.css';
 
@@ -62,6 +63,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${caveat.variable} ${allura.variable} ${lora.variable}`}
     >
       <body>{children}</body>
+      <GoogleAnalytics gaId="G-WC3T9K5XM5" />
     </html>
   );
 }
