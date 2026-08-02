@@ -19,7 +19,8 @@ export default function JournalHero() {
 
               <Image
                 src="/images/decor/pp.png"
-                alt="Leaf"
+                alt=""
+                aria-hidden="true"
                 width={200}
                 height={300}
                 className="-ml-15 object-contain"

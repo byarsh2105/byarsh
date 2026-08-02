@@ -28,6 +28,7 @@ export default function Footer() {
             <Link
               href={navigation.logo.href}
               className="flex items-end text-[48px] leading-none tracking-[-0.04em] text-black"
+              aria-label="ByArsh Home"
             >
               {isByArshFormat ? (
                 <>
@@ -55,36 +56,43 @@ export default function Footer() {
                 href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <FaInstagram
                   size={20}
                   className="hover:text-primary cursor-pointer transition-colors"
+                  aria-hidden="true"
                 />
               </Link>
               <Link
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
                 <FaLinkedin
                   size={20}
                   className="hover:text-primary cursor-pointer transition-colors"
+                  aria-hidden="true"
                 />
               </Link>
               <Link
                 href={socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
               >
                 <FaGithub
                   size={20}
                   className="hover:text-primary cursor-pointer transition-colors"
+                  aria-hidden="true"
                 />
               </Link>
-              <Link href={socialLinks.email}>
+              <Link href={socialLinks.email} aria-label="Email">
                 <Mail
                   size={20}
                   className="hover:text-primary cursor-pointer transition-colors"
+                  aria-hidden="true"
                 />
               </Link>
             </div>

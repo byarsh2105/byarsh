@@ -29,7 +29,12 @@ export default function LibraryNewsletter() {
       <div className="relative flex flex-col items-center justify-between gap-8 overflow-hidden rounded-2xl border border-black/5 bg-transparent px-8 py-10 lg:flex-row">
         <div className="z-10 flex w-full items-center gap-6 lg:w-auto">
           <div className="bg-primary/10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full">
-            <Mail className="text-primary/70" size={28} strokeWidth={1.5} />
+            <Mail
+              className="text-primary/70"
+              size={28}
+              strokeWidth={1.5}
+              aria-hidden="true"
+            />
           </div>
 
           <div>
@@ -58,6 +63,8 @@ export default function LibraryNewsletter() {
                     type="email"
                     name="email"
                     required
+                    aria-required="true"
+                    aria-label="Email address"
                     placeholder={libraryNewsletter.inputPlaceholder}
                     className="border-border focus:border-primary/50 h-12 w-full rounded-sm border bg-white/60 px-5 text-[14px] transition-colors outline-none sm:rounded-r-none sm:border-r-0"
                   />
@@ -65,6 +72,7 @@ export default function LibraryNewsletter() {
                 <Button
                   type="submit"
                   disabled={isPending}
+                  aria-label="Subscribe"
                   className="h-12 w-full rounded-sm bg-[#B092C5] px-8 text-[15px] font-medium text-white transition-colors hover:bg-[#9A7BB0] sm:w-auto sm:rounded-l-none"
                 >
                   {isPending ? (

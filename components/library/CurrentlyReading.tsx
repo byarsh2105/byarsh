@@ -18,7 +18,7 @@ export default function CurrentlyReading() {
           <div className="relative mx-auto h-[240px] w-[160px] shrink-0 overflow-hidden rounded-md shadow-lg shadow-black/10 sm:mx-0">
             <Image
               src={currentlyReading.book.cover}
-              alt={`${currentlyReading.book.title} Cover`}
+              alt={currentlyReading.book.title}
               fill
               className="object-cover"
             />
@@ -74,7 +74,8 @@ export default function CurrentlyReading() {
           <div className="absolute top-1/2 right-6 hidden -translate-y-1/2 opacity-90 sm:block">
             <Image
               src="/images/decor/vintage_preview.png"
-              alt="Vintage book illustration"
+              alt=""
+              aria-hidden="true"
               width={140}
               height={140}
               className="object-contain"

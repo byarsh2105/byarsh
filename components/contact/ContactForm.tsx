@@ -56,6 +56,8 @@ export default function ContactForm() {
                     type="text"
                     name="name"
                     required
+                    aria-required="true"
+                    aria-label="Your Name"
                     placeholder={contactForm.form.namePlaceholder}
                     className="border-border/60 focus:border-primary/50 w-full rounded-[8px] border bg-[#FCFAF7] px-5 py-4 text-[15px] text-black transition-colors outline-none"
                   />
@@ -65,6 +67,8 @@ export default function ContactForm() {
                     type="email"
                     name="email"
                     required
+                    aria-required="true"
+                    aria-label="Your Email"
                     placeholder={contactForm.form.emailPlaceholder}
                     className="border-border/60 focus:border-primary/50 w-full rounded-[8px] border bg-[#FCFAF7] px-5 py-4 text-[15px] text-black transition-colors outline-none"
                   />
@@ -73,6 +77,8 @@ export default function ContactForm() {
                   <textarea
                     name="message"
                     required
+                    aria-required="true"
+                    aria-label="Your Message"
                     placeholder={contactForm.form.messagePlaceholder}
                     rows={6}
                     className="border-border/60 focus:border-primary/50 w-full resize-none rounded-[8px] border bg-[#FCFAF7] px-5 py-4 text-[15px] text-black transition-colors outline-none"
@@ -81,9 +87,10 @@ export default function ContactForm() {
                 <div>
                   <Button
                     disabled={isMessagePending}
+                    aria-label="Send Message"
                     className="bg-primary hover:bg-primary/90 h-12 w-full rounded-[8px] px-8 text-[15px] font-medium transition-colors disabled:opacity-70 sm:w-auto"
                   >
-                    <Send className="mr-2 h-4 w-4" />{' '}
+                    <Send className="mr-2 h-4 w-4" aria-hidden="true" />{' '}
                     {isMessagePending
                       ? 'Sending...'
                       : contactForm.form.buttonText}
@@ -143,6 +150,7 @@ export default function ContactForm() {
                   <input
                     type="email"
                     name="email"
+                    aria-label="Your Email (Optional)"
                     placeholder={contactForm.gratitude.emailPlaceholder}
                     className="border-border/60 focus:border-primary/50 w-full rounded-[8px] border bg-white px-5 py-4 text-[15px] text-black transition-colors outline-none"
                   />
@@ -151,12 +159,15 @@ export default function ContactForm() {
                       type="text"
                       name="gratitude"
                       required
+                      aria-required="true"
+                      aria-label="What are you grateful for?"
                       placeholder={contactForm.gratitude.inputPlaceholder}
                       className="border-border/60 focus:border-primary/50 w-full rounded-[8px] border bg-white px-5 py-4 pr-24 text-[15px] text-black transition-colors outline-none"
                     />
                     <Button
                       type="submit"
                       disabled={isGratitudePending}
+                      aria-label="Send Gratitude"
                       className="bg-primary hover:bg-primary/90 absolute top-2 right-2 h-[40px] rounded-[6px] px-5 text-[13px] font-medium text-white transition-colors disabled:opacity-70"
                     >
                       {isGratitudePending

@@ -30,6 +30,7 @@ export default function Header() {
             <Link
               href={navigation.logo.href}
               className="flex items-end text-[45px] leading-none tracking-[-0.04em]"
+              aria-label="ByArsh Home"
             >
               {isByArshFormat ? (
                 <>
@@ -54,6 +55,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    aria-current={isActive ? 'page' : undefined}
                     className={`hover:text-primary after:bg-primary relative pb-2 text-[15px] font-medium transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:transition-all after:duration-300 hover:after:w-full ${
                       isActive
                         ? 'text-primary after:w-full'
@@ -85,7 +87,12 @@ export default function Header() {
                 }}
               >
                 <Button className="h-10 rounded-[14px] px-5 text-[15px] font-medium">
-                  <Mail size={16} strokeWidth={2} className="mr-2" />
+                  <Mail
+                    size={16}
+                    strokeWidth={2}
+                    className="mr-2"
+                    aria-hidden="true"
+                  />
                   {navigation.subscribeButton.text}
                 </Button>
               </Link>
@@ -98,7 +105,11 @@ export default function Header() {
                 className="text-foreground cursor-pointer p-2"
                 aria-label="Toggle Menu"
               >
-                <Menu size={28} className="pointer-events-none block" />
+                <Menu
+                  size={28}
+                  className="pointer-events-none block"
+                  aria-hidden="true"
+                />
               </label>
             </div>
           </div>
@@ -115,6 +126,7 @@ export default function Header() {
             <Link
               href={navigation.logo.href}
               className="flex items-end text-[45px] leading-none tracking-[-0.04em]"
+              aria-label="ByArsh Home"
               onClick={() => {
                 const cb = document.getElementById(
                   'mobile-menu-toggle',
@@ -138,7 +150,11 @@ export default function Header() {
               className="text-foreground cursor-pointer p-2"
               aria-label="Close Menu"
             >
-              <X size={28} className="pointer-events-none block" />
+              <X
+                size={28}
+                className="pointer-events-none block"
+                aria-hidden="true"
+              />
             </label>
           </div>
         </Container>
@@ -152,6 +168,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={isActive ? 'page' : undefined}
                 className={`text-[24px] font-medium transition-colors ${
                   isActive ? 'text-primary' : 'text-foreground/80'
                 }`}
@@ -169,7 +186,12 @@ export default function Header() {
 
           <Link href={navigation.subscribeButton.href} className="mt-6">
             <Button className="h-14 rounded-[16px] px-10 text-[18px] font-medium">
-              <Mail size={20} strokeWidth={2} className="mr-3" />
+              <Mail
+                size={20}
+                strokeWidth={2}
+                className="mr-3"
+                aria-hidden="true"
+              />
               {navigation.subscribeButton.text}
             </Button>
           </Link>

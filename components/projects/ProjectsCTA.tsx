@@ -11,7 +11,8 @@ export default function ProjectsCTA() {
 
           <Image
             src="/images/decor/pp.png"
-            alt="Leaf"
+            alt=""
+            aria-hidden="true"
             width={110}
             height={140}
             className="pointer-events-none absolute bottom-0 left-8 opacity-80 select-none"

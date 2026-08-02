@@ -60,7 +60,8 @@ export default function BookCollections() {
             <div className="relative mb-8 aspect-[1/1.5] w-[180px] overflow-hidden rounded-sm shadow-2xl">
               <Image
                 src={favoriteBooksInfo.cover}
-                alt="Favorite Book Cover"
+                alt=""
+                aria-hidden="true"
                 fill
                 className="object-cover"
               />

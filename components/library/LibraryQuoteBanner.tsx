@@ -10,7 +10,8 @@ export default function LibraryQuoteBanner() {
         <div className="absolute top-0 right-0 bottom-0 z-0 w-3/4 md:w-1/2">
           <Image
             src={libraryQuoteBanner.image}
-            alt="Library Quote Background"
+            alt=""
+            aria-hidden="true"
             fill
             className="mask-image-to-l object-cover object-left"
             style={{

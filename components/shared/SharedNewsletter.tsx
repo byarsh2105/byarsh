@@ -27,7 +27,12 @@ export default function SharedNewsletter({
     <div className="border-border/40 relative flex flex-col items-center justify-between gap-8 overflow-hidden rounded-[16px] border bg-[#FAF7F2] px-8 py-10 lg:flex-row">
       <div className="z-10 flex w-full items-center gap-6 lg:w-auto">
         <div className="bg-primary/10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full">
-          <Mail className="text-primary/70" size={28} strokeWidth={1.5} />
+          <Mail
+            className="text-primary/70"
+            size={28}
+            strokeWidth={1.5}
+            aria-hidden="true"
+          />
         </div>
 
         <div>
@@ -56,12 +61,15 @@ export default function SharedNewsletter({
                 type="email"
                 name="email"
                 required
+                aria-required="true"
+                aria-label="Your email address"
                 placeholder="Your email address"
                 className="border-border focus:border-primary/50 h-[50px] w-full rounded-t-md border bg-white/80 px-5 text-[15px] transition-colors outline-none sm:w-[280px] sm:rounded-l-md sm:rounded-tr-none sm:border-r-0"
               />
               <Button
                 type="submit"
                 disabled={isPending}
+                aria-label="Join the Journey"
                 className="bg-primary hover:bg-primary/90 h-[50px] w-full rounded-b-md px-8 text-[15px] font-medium text-white transition-colors disabled:opacity-70 sm:w-auto sm:rounded-r-md sm:rounded-bl-none"
               >
                 {isPending ? '...' : 'Join the Journey'}{' '}

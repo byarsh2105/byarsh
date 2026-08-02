@@ -19,12 +19,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Hero />
-      <JournalSection />
-      <PhilosophySection />
-      <ProjectsLibrarySection />
-      <JourneySection />
-      <NewsletterSection />
+      <main>
+        <Hero />
+        <JournalSection />
+        <PhilosophySection />
+        <ProjectsLibrarySection />
+        <JourneySection />
+        <NewsletterSection />
+      </main>
       <Footer />
     </>
   );

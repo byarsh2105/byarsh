@@ -45,12 +45,15 @@ export default function StayConnected() {
                     type="email"
                     name="email"
                     required
+                    aria-required="true"
+                    aria-label="Email address"
                     placeholder={stayConnected.inputPlaceholder}
                     className="border-border/40 focus:border-primary/50 h-[46px] min-w-0 flex-1 rounded-l-[8px] border border-r-0 bg-[#FCFAF7] px-5 text-[14px] text-black transition-colors outline-none placeholder:text-black/50"
                   />
                   <Button
                     type="submit"
                     disabled={isPending}
+                    aria-label="Subscribe"
                     className="h-[46px] shrink-0 rounded-l-none rounded-r-[8px] bg-[#9D85AE] px-6 text-[15px] font-medium text-white transition-colors hover:bg-[#8B759A] disabled:opacity-70"
                   >
                     {isPending

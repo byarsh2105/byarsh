@@ -64,6 +64,8 @@ export default function NewsletterSection() {
                     type="email"
                     name="email"
                     required
+                    aria-required="true"
+                    aria-label="Email address"
                     placeholder={newsletter.inputPlaceholder}
                     className="flex-1 bg-transparent px-5 py-3 text-[14px] outline-none placeholder:text-[#A8A29B]"
                   />
@@ -71,6 +73,7 @@ export default function NewsletterSection() {
                   <button
                     type="submit"
                     disabled={isPending}
+                    aria-label="Subscribe"
                     className="bg-primary hover:bg-primary/90 px-8 text-[14px] font-medium text-white transition disabled:opacity-70"
                   >
                     {isPending ? '...' : newsletter.buttonText}
