@@ -1,4 +1,5 @@
 import { Mail, Users, Camera, Code2 } from 'lucide-react';
+import { socialLinks } from './social';
 
 export const contactHero = {
   title: "Let's Talk",
@@ -17,31 +18,31 @@ export const connectOptions = {
       title: 'Email',
       desc: 'Drop me a note anytime.',
       linkText: 'arshshaikh1520@gmail.com',
-      href: 'mailto:arshshaikh1520@gmail.com',
+      href: socialLinks.email,
       icon: Mail,
       isEmail: true,
     },
     {
       title: 'LinkedIn',
       desc: "Let's connect",
-      linkText: '',
-      href: 'https://linkedin.com',
+      linkText: '@arsh-shaikh',
+      href: socialLinks.linkedin,
       icon: Users,
       isEmail: false,
     },
     {
       title: 'Instagram',
       desc: 'Behind the scenes',
-      linkText: '',
-      href: 'https://instagram.com',
+      linkText: '@arsh._.shaikh._',
+      href: socialLinks.instagram,
       icon: Camera,
       isEmail: false,
     },
     {
       title: 'GitHub',
       desc: "Things I'm building",
-      linkText: '',
-      href: 'https://github.com',
+      linkText: '@byarsh2105',
+      href: socialLinks.github,
       icon: Code2,
       isEmail: false,
     },
