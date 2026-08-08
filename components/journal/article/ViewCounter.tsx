@@ -3,17 +3,23 @@
 import { useEffect, useState } from 'react';
 import { Eye } from 'lucide-react';
 
-export default function ViewCounter({ slug }: { slug: string }) {
+export default function ViewCounter({
+  slug,
+  trackView = false,
+}: {
+  slug: string;
+  trackView?: boolean;
+}) {
   const [views, setViews] = useState<number | null>(null);
 
   useEffect(() => {
     // Only fetch/increment on the client side
     let isMounted = true;
 
-    async function trackView() {
+    async function fetchOrTrackView() {
       try {
         const res = await fetch(`/api/views/${slug}`, {
-          method: 'POST',
+          method: trackView ? 'POST' : 'GET',
         });
         const data = await res.json();
 
@@ -21,16 +27,16 @@ export default function ViewCounter({ slug }: { slug: string }) {
           setViews(data.views);
         }
       } catch (error) {
-        console.error('Failed to track view', error);
+        console.error('Failed to get/track view', error);
       }
     }
 
-    trackView();
+    fetchOrTrackView();
 
     return () => {
       isMounted = false;
     };
-  }, [slug]);
+  }, [slug, trackView]);
 
   if (views === null) {
     return (

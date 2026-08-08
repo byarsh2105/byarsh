@@ -89,7 +89,10 @@ export default function ArticleHero({ post }: ArticleHeroProps) {
           </div>
           <span className="bg-border h-1 w-1 shrink-0 rounded-full" />
           <div className="shrink-0">
-            <ViewCounter slug={post._meta?.path || post.slug} />
+            <ViewCounter
+              slug={post._meta?.path || post.slug}
+              trackView={true}
+            />
           </div>
         </div>
       </div>
